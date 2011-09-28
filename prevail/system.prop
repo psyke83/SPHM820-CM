@@ -1,0 +1,69 @@
+
+##
+## BEGIN: system.prop for prevail
+##
+
+# Change priority of home/music apps
+ro.HOME_APP_ADJ=1
+ro.PERCEPTIBLE_APP_ADJ=0
+
+# RIL
+ro.ril.samsung_cdma=true
+ro.telephony.default_network=4
+ro.telephony.call_ring.multiple=false
+ro.telephony.sends_barcount=1
+ro.telephony.ril_class=samsung
+rild.libpath=/system/lib/libsec-ril.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+
+# WiFi
+# To set wifi (AP) driver's firmware path
+ro.wifi-ap.fw-path=/etc/wifi/bcm4329_sta.bin nvram_path=/etc/wifi/nvram.txt
+wifi.interface=eth0
+wifi.supplicant_scan_interval=45
+
+# Google
+DEVICE_PROVISIONED=1
+ro.com.android.dataroaming=false
+ro.com.google.locationfeatures=1
+ro.com.google.networklocation=1
+ro.setupwizard.enable_bypass=1
+
+# Graphics
+ro.media.dec.jpeg.memcap=20000000
+ro.sf.lcd_density=160
+ro.opengles.version=131072
+
+# Network
+mobiledata.interfaces=ppp0,eth0,gprs
+ro.ril.gprsclass=10
+
+# Key layouts
+
+
+# Performance settings
+debug.sf.hw=0
+ro.compcache.default=18
+dalvik.vm.dexopt-flags=m=y
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.heapsize=32m
+persist.sys.purgeable_assets=1
+persist.sys.use_dithering=1
+
+# JNI debugging
+ro.kernel.android.checkjni=0
+dalvik.vm.checkjni=false
+
+##
+## END: system.prop for prevail
+##
+
