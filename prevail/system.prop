@@ -27,7 +27,7 @@ persist.rild.nitz_short_ons_3=
 
 # WiFi
 # To set wifi (AP) driver's firmware path
-ro.wifi-ap.fw-path=system/etc/wifi/bcm4329_sta.bin nvram_path=system/etc/wifi/nvram.txt
+ro.wifi-ap.fw-path=/system/etc/wifi/bcm4329_sta.bin nvram_path=/system/etc/wifi/nvram.txt
 wifi.interface=eth0
 wifi.supplicant_scan_interval=45
 
