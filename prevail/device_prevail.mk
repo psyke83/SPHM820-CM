@@ -114,16 +114,16 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
-    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_mfg.bin:system/etc/wifi/bcm4329_mfg.bin \
-    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_sta.bin:system/etc/wifi/bcm4329_sta.bin \
-    vendor/samsung/prevail/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
-    vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
-    device/samsung/prevail/files/wifi/dhd.ko:system/wifi/dhd.ko \
-    device/samsung/prevail/files/bin/dhcpcd:system/bin/dhcpcd \
+    device/samsung/prevail/files/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
+    device/samsung/prevail/files/etc/wifi/bcm4329_mfg.bin:system/etc/wifi/bcm4329_mfg.bin \
+    device/samsung/prevail/files/etc/wifi/bcm4329_sta.bin:system/etc/wifi/bcm4329_sta.bin \
+    device/samsung/prevail/files/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
+    device/samsung/prevail/files/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
+    device/samsung/prevail/files/etc/wifi/dhd.ko:system/etc/wifi/dhd.ko \
     device/samsung/prevail/files/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
     device/samsung/prevail/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/samsung/prevail/files/etc/dhcpd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
+    device/samsung/prevail/files/etc/dhcpd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    device/samsung/prevail/files/bin/dhcpcd:system/bin/dhcpcd
 
 # SD Card
 PRODUCT_COPY_FILES += \

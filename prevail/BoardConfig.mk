@@ -99,10 +99,10 @@ PRODUCT_WIRELESS_TOOLS := true
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
 BOARD_WLAN_DEVICE := bcm4329
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH := "/etc/wifi/bcm4329_sta.bin"
-WIFI_DRIVER_FW_AP_PATH := "/etc/wifi/bcm4329_aps.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/etc/wifi/bcm4329_sta.bin nvram_path=/etc/wifi/nvram.txt"
+WIFI_DRIVER_MODULE_PATH := "/system/etc/wifi/dhd.ko"
+WIFI_DRIVER_FW_STA_PATH := "/system/etc/wifi/bcm4329_sta.bin"
+WIFI_DRIVER_FW_AP_PATH := "/system/etc/wifi/bcm4329_aps.bin"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_sta.bin nvram_path=/system/etc/wifi/nvram.txt"
 WIFI_DRIVER_MODULE_NAME := "dhd"
 
 # 3G
