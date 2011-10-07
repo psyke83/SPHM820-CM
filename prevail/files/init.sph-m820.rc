@@ -6,28 +6,22 @@ on init
 # Insert modules
     insmod /lib/modules/fsr.ko
     insmod /lib/modules/fsr_stl.ko
-    insmod /lib/modules/rfs_glue.ko
-    insmod /lib/modules/rfs_fat.ko
     insmod /lib/modules/jbd2.ko
     insmod /lib/modules/ext4.ko
 
-# Samsung Paramter driver
-    insmod /lib/modules/sec_param.ko
+# SprintHotspot
+    insmod /lib/modules/hotspot_event_monitoring.ko
 
 on fs
 
 # Mount partitions
-    mount rfs /dev/stl12 /system rw check=no
-    mount rfs /dev/stl13 /data rw nosuid nodev check=no
-    mount rfs /dev/stl14 /cache rw nosuid nodev check=no
-    mount ext2 /dev/block/stl12 /system wait noatime nodiratime noauto_da_alloc ro
-    mount ext2 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
-    mount ext2 /dev/block/stl14 /cache wait nosuid nodev noatime nodiratime noauto_da_alloc
-    mount ext4 /dev/block/stl12 /system wait noatime nodiratime noauto_da_alloc ro
-    mount ext4 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
-    mount ext4 /dev/block/stl14 /cache wait nosuid nodev noatime nodiratime noauto_da_alloc	
+	mount ext4 /dev/block/stl12 /system wait noatime nodiratime noauto_da_alloc ro
+	mount ext4 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
+	mount ext4 /dev/block/stl14 /cache wait nosuid nodev noatime nodiratime noauto_da_alloc
+
 
 on boot
+
 
 
 # Set up WiFi and Bluetooth as soon as possible
@@ -54,25 +48,6 @@ on boot
 	chmod 0666 /data/misc/sensors/ecs_nvm
 	chmod 0666 /data/misc/sensors/accel_offset
 
-	# change the permissionsensor chips
-	chmod 0660 /dev/proximity
-	chmod 0660 /dev/mmc31xx
-	chmod 0660 /dev/bma_accel
-	chmod 0660 /dev/kr3dm_accel
-	chmod 0666 /data/misc/sensors/ecs_nvm
-	chmod 0666 /data/misc/sensors/accel_offset
-	chmod 0660 /dev/ecompass_ctrl
-	chown system system /dev/mmc31xx	
-	chown system system /dev/kr3dm_accel	
-	chown system system /dev/ecompass_ctrl	
-	chown system system /dev/proximity	
-
-	# give read permission for others
-	# this allows dumpsate to execute procrank
-	# remove this for final build!
-	chmod 0444 /proc/kpagecount
-	chmod 0444 /proc/kpageflags
-
 # Setup bluetooth
 	mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 	chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -86,28 +61,15 @@ on boot
 	chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
 	chmod 0666 /sys/devices/platform/msm_serial_hs.0/clock
 
-# to enable wifi
-    mkdir /data/wifi 0777 wifi wifi
-    chown wifi wifi /data/wifi
-    chmod 0777 /data/wifi
-    mkdir /data/misc/wifi 0771 wifi wifi
-    chown wifi wifi /data/misc/wifi
-    chmod 0777 /data/misc/wifi
-    mkdir /data/misc/dhcp 0777 dhcp dhcp
-    chown dhcp dhcp /data/misc/dhcp
-    chmod 0777 /data/misc/dhcp
-    mkdir /data/misc/wifi/sockets 0777 wifi wifi
-    chown wifi wifi /data/misc/wifi/sockets
-    chmod 0777 /data/misc/wifi/sockets
-    chmod 0664 /system/etc/wifi/wpa_supplicant.conf
-    setprop wifi.interface "eth0"
-    chown root root /system/bin/wlservice
-    chmod 6777 /system/bin/wlservice
-    mkdir /data/misc/wifi 0777 wifi wifi
-    chmod 0777 /data/misc/wifi/
-    mkdir /data/misc/dhcp 0777 dhcp dhcp
-    mkdir /data/misc/wifi/sockets 0777 wifi wifi
-# end of wifi
+# Create WIFI filesystem structure
+	mkdir /data/misc 01771 system misc
+	mkdir /data/misc/wifi 0770 system wifi
+	mkdir /data/misc/wifi/sockets
+	chown system wifi /data/misc/wifi/sockets
+	chmod 770 /data/misc/wifi/sockets
+	mkdir /data/misc/dhcp 0770 dhcp dhcp
+	chown dhcp dhcp /data/misc/dhcp
+	mkdir /data/system 0775 system system
 
 # Permission for ril
 	mkdir /data/misc/radio 0774 radio radio
@@ -159,53 +121,103 @@ on boot
 	chmod 0777 /data/stream_headset.txt
 	chmod 0777 /data/stream_speaker.txt
 
+
+# WIFI
+	mkdir /data/misc/wifi/sockets 0770 wifi wifi
+	mkdir /data/misc/wifi/hostapd 0770 wifi wifi
+
 # DHCP
 	mkdir /data/misc/dhcp 0770 dhcp dhcp
 	mkdir /data/misc/dhcp 0777 system system
 	chmod 0666 /data/bdaddr
 
+service console /system/bin/sh
+    console
+
+# adbd is controlled by the persist.service.adb.enable system property
+service adbd /sbin/adbd
+    disabled
+
+# adbd on at boot in emulator
+on property:ro.kernel.qemu=1
+    start adbd
+
+on property:persist.service.adb.enable=1
+    start adbd
+    write /sys/module/g_android/parameters/product_id 9017
+
+on property:persist.service.adb.enable=0
+    stop adbd
+
+on property:persist.service.slate_mode=1
+    write /sys/class/power_supply/battery/batt_slate_mode 1
+
+on property:persist.service.slate_mode=0
+    write /sys/class/power_supply/battery/batt_slate_mode 0
+
+
+# to enable wifi
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/wifi/bcm_supp.conf
+   disabled
+   oneshot
+
+service dhcpcd /system/bin/dhcpcd -BKL eth0
+   disabled
+   oneshot
+
+service ifcfg_eth0 /system/bin/ifconfig eth0 up
+    disabled
+    oneshot
+
+###############################################
+service iprenew_eth0 /system/bin/dhcpcd -n
+	disabled
+	oneshot
+################################################
+
+#for WiFi MFG(TestMode)
+#SecFeatue.CDMA_WIFI
+service mfgloader /system/bin/mfgloader
+    disabled
+    oneshot
+
+service wlservice /system/bin/wlservice
+    disabled
+    oneshot
+# end of wifi
+
+
 service qmuxd /system/bin/qmuxd
-	user radio
-	group system radio inet
+    user radio
+    group system radio inet
 
-service netd /system/bin/netd
-        socket netd stream 0660 root system
-        socket dnsproxyd stream 0660 root inet
+#service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
 
-service debuggerd /system/bin/debuggerd
+service DR-daemon /system/bin/drexe
+    user system
+    group system radio inet net_raw
 
-#Touch multi-touch permissions
-    chmod 0666 /sys/class/sec/ts/firmware1
+service mobex-daemon /system/bin/npsmobex
+    user root
 
-#Permissions for qmuxd
-    chown radio radio /dev/smdcntl0
-    chown radio radio /dev/smdcntl1
-    chown radio radio /dev/smdcntl2
+service pppd_cdma /system/bin/pppd_runner
+   user root
+   group radio cache inet misc system
+   disabled
+   oneshot
 
-#Define modem related settings
-    setprop ro.radio.use-ppp yes
-# for Bluetooth
-    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
-    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
-    chown system system /sys/module/sco/parameters/disable_esco
-    chmod 0660 /sys/module/bluetooth_power/parameters/power
-    chmod 0660 /proc/bluetooth/sleep/proto
+service oovoo /system/bin/ovmservice
+    user media
+    group system audio camera graphics inet net_bt net_bt_admin
 
-    chown bluetooth bluetooth /dev/uinput
-    chmod 0660 /dev/uinput
-    chown bluetooth bluetooth /dev/ttyHS0
-    chmod 0660 /dev/ttyHS0
-
-    chmod 0777 /sys/class/rfkill/rfkill0/state
-    chmod 0777 /sys/class/rfkill/rfkill1/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/state
+service samsungloop /system/bin/samsungloop
+    user graphics
+    group graphics
+    disabled
+    oneshot
 
 # Start Bluetooth =========================================================================
-service dbus /system/bin/dbus-daemon --system --nofork
-    socket dbus stream 660 bluetooth bluetooth
-    user bluetooth
-    group bluetooth net_bt_admin
+
 
 service btld /system/bin/logwrapper /system/bin/btld -hb 3000000 -hp /dev/ttyHS0 -lpm 1
 #    user root
@@ -223,78 +235,35 @@ service obexd /system/bin/logwrapper /system/bin/obexd
 	disabled
 	oneshot
 
-service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -n /etc/bluez/main.conf
-    socket bluetooth stream 660 bluetooth bluetooth
-    socket dbus_bluetooth stream 660 bluetooth bluetooth
-    # init.rc does not yet support applying capabilities, so run as root and
-    # let bluetoothd drop uid to bluetooth with the right linux capabilities
-    group bluetooth net_bt_admin misc
-    disabled
-
-service hfag /system/bin/sdptool add --channel=10 HFAG
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service hsag /system/bin/sdptool add --channel=11 HSAG
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service opush /system/bin/sdptool add --channel=12 OPUSH
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service pbap /system/bin/sdptool add --channel=19 PBAP
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
 # End of Bluetooth =========================================================================
 
-# to enable wifi
-service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/wifi/bcm_supp.conf
-   disabled
-   oneshot
 
-service dhcpcd /system/bin/dhcpcd -BKL eth0
-   disabled
-   oneshot
-
-service ifcfg_eth0 /system/bin/ifconfig eth0 up
+service abtfilt /system/bin/abtfilt -c -d -z -n
     disabled
     oneshot
 
-#for WiFi MFG(TestMode)
-#SecFeatue.CDMA_WIFI
-service mfgloader /system/bin/mfgloader
-    disabled
-    oneshot
-
-service wlservice /system/bin/wlservice
-    disabled
-    oneshot
-# end of wifi
-
-service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
-	socket hostapd_athap0 dgram 660 wifi wifi
-	group wifi inet
-	oneshot
-	disabled
-
-service get_macaddrs /system/bin/get_macaddrs
-	user root
-	oneshot
-	disabled
-
+#service dhcp-service /system/bin/netcfg eth0 dhcp
+#        oneshot
+#
+on property:dev.bootcomplete=1
+        stop dhcp-service
+        start dhcp-service
 service memsicd /system/bin/memsicd
-	user system
-	group system
-	oneshot
+    user system
+    group system
+    oneshot
 
-on property:init.svc.ril-daemon=running
-	start get_macaddrs
+#added by JH
+# for Mobile AP
+service mobileAP /system/bin/wlp2pservice
+
+chmod 555 /system/etc/mobileap/enable_ppp.sh
+chmod 555 /system/etc/mobileap/enable_eth.sh
+chmod 555 /system/etc/mobileap/initialize_nat.sh
+chmod 555 /system/etc/mobileap/tethering_enable.sh
+chmod 555 /system/etc/mobileap/enable_uwbr.sh
+# end of Mobile AP
+#added by JH
+
+service collin_ph /system/bin/batt.sh
+    oneshot

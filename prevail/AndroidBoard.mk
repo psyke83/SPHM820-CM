@@ -5,4 +5,4 @@ include $(CLEAR_VARS)
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # include the non-open-source counterpart to this file
--include device/samsung/prevail/AndroidBoardVendor.mk
+-include vendor/samsung/prevail/AndroidBoardVendor.mk

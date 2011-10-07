@@ -28,8 +28,8 @@ PRODUCT_PACKAGES += \
 
 # Boot screen
 #PRODUCT_COPY_FILES += \
-#    device/samsung/prevail/files/root/EUROPA.rle:root/SPH-M820.rle \
-#    device/samsung/prevail/files/root/EUROPA.rle:recovery/root/SPH-M820.rle
+#    device/samsung/prevail/files/root/SPH-M820.rle:root/SPH-M820.rle \
+#    device/samsung/prevail/files/root/SPH-M820.rle:recovery/root/SPH-M820.rle
 
 # Live wallpaper packages
 PRODUCT_PACKAGES += \
@@ -60,8 +60,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/prevail/files/root/lib/modules/jbd2.ko:root/lib/modules/jbd2.ko \
     device/samsung/prevail/files/root/lib/modules/fsr.ko:root/lib/modules/fsr.ko \
     device/samsung/prevail/files/root/lib/modules/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
-    device/samsung/prevail/files/root/lib/modules/rfs_glue.ko:recovery/root/lib/modules/rfs_glue.ko \
-    device/samsung/prevail/files/root/lib/modules/rfs_fat.ko:recovery/root/lib/modules/rfs_fat.ko \
     device/samsung/prevail/files/root/lib/modules/sec_param.ko:root/lib/modules/sec_param.ko \
 
 # Recovery kernel modules / files
@@ -70,8 +68,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/prevail/files/root/lib/modules/jbd2.ko:root/lib/modules/jbd2.ko \
     device/samsung/prevail/files/root/lib/modules/fsr.ko:root/lib/modules/fsr.ko \
     device/samsung/prevail/files/root/lib/modules/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
-    device/samsung/prevail/files/root/lib/modules/rfs_glue.ko:recovery/root/lib/modules/rfs_glue.ko \
-    device/samsung/prevail/files/root/lib/modules/rfs_fat.ko:recovery/root/lib/modules/rfs_fat.ko \
+    device/samsung/prevail/files/root/lib/modules/sec_param.ko:root/lib/modules/sec_param.ko \
     device/samsung/prevail/recovery.fstab_full:recovery/root/etc/recovery.fstab \
     device/samsung/prevail/files/bin/fat.format:recovery/root/sbin/fat.format
 
@@ -89,7 +86,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/prevail/files/bin/get_macaddrs:system/bin/get_macaddrs \
     device/samsung/prevail/files/bin/mad2sd:system/bin/mad2sd \
     device/samsung/prevail/files/etc/sysctl.conf:system/etc/sysctl.conf \
-    device/samsung/prevail/files/etc/init.d/02prevail:system/etc/init.d/02prevail
+
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -98,15 +95,15 @@ PRODUCT_COPY_FILES += \
 
 # 3D
 PRODUCT_COPY_FILES += \
-    device/samsung/prevail/files/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-    device/samsung/prevail/files/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-    device/samsung/prevail/files/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-    device/samsung/prevail/files/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
-    device/samsung/prevail/files/lib/libgsl.so:system/lib/libgsl.so \
+    vendor/samsung/prevail/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+    vendor/samsung/prevail/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+    vendor/samsung/prevail/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+    vendor/samsung/prevail/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+    vendor/samsung/prevail/proprietary/lib/libgsl.so:system/lib/libgsl.so \
     vendor/samsung/prevail/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
     vendor/samsung/prevail/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
-	# Camera
+# Camera
 PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
     vendor/samsung/prevail/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
@@ -114,20 +111,23 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    device/samsung/prevail/files/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
-    device/samsung/prevail/files/etc/wifi/bcm4329_mfg.bin:system/etc/wifi/bcm4329_mfg.bin \
-    device/samsung/prevail/files/etc/wifi/bcm4329_sta.bin:system/etc/wifi/bcm4329_sta.bin \
-    device/samsung/prevail/files/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
-    device/samsung/prevail/files/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
-    device/samsung/prevail/files/etc/wifi/dhd.ko:system/etc/wifi/dhd.ko \
-    device/samsung/prevail/files/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
-    device/samsung/prevail/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/samsung/prevail/files/etc/dhcpd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    device/samsung/prevail/files/bin/dhcpcd:system/bin/dhcpcd
+    device/samsung/prevail/files/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
+    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-run-hooks:system/etc/dhcpcd/dhcpcd-run-hooks \
+    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-hooks/01-test:system/etc/dhcpcd/dhcpcd-hooks/01-test \
+    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-hooks/20-dns.conf:system/etc/dhcpcd/dhcpcd-hooks/20-dns.conf \
+    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-hooks/95-configured:system/etc/dhcpcd/dhcpcd-hooks/95-configured \
+    vendor/samsung/prevail/proprietary/bin/dhcpcd:system/bin/dhcpcd \
+    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_mfg.bin:system/etc/wifi/bcm4329_mfg.bin \
+    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_sta.bin:system/etc/wifi/bcm4329_sta.bin \
+    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
+    vendor/samsung/prevail/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
+    vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
+    vendor/samsung/prevail/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # SD Card
 PRODUCT_COPY_FILES += \
-    device/samsung/prevail/files/etc/vold.fstab:system/etc/vold.fstab
+    vendor/samsung/prevail/proprietary/etc/vold.fstab:system/etc/vold.fstab
 
 # Media configuration xml file
 PRODUCT_COPY_FILES += \
@@ -135,10 +135,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/samsung/prevail/files/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+    vendor/samsung/prevail/proprietary/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     vendor/samsung/prevail/proprietary/lib/liba2dp.so:system/lib/liba2dp.so \
     vendor/samsung/prevail/proprietary/lib/libaudioeq.so:system/lib/libaudioeq.so \
-    device/samsung/prevail/files/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+    vendor/samsung/prevail/proprietary/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
 # Samsung RIL
 PRODUCT_COPY_FILES += \
@@ -151,34 +151,64 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/bin/BCM4329B1_002.002.023.0746.0827.hcd:system/bin/BCM4329B1_002.002.023.0746.0827.hcd
+    vendor/samsung/prevail/proprietary/bin/BCM4329B1_002.002.023.0746.0827.hcd:system/bin/BCM4329B1_002.002.023.0746.0827.hcd \
+    vendor/samsung/prevail/proprietary/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
+    vendor/samsung/prevail/proprietary/etc/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
+    vendor/samsung/prevail/proprietary/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
+    vendor/samsung/prevail/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
+    vendor/samsung/prevail/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf 
+
+
+
 
 # OMX libraries
 PRODUCT_COPY_FILES += \
-    device/samsung/prevail/files/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
-    device/samsung/prevail/files/lib/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
-    device/samsung/prevail/files/lib/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
-    device/samsung/prevail/files/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
-    device/samsung/prevail/files/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-    device/samsung/prevail/files/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \
-    device/samsung/prevail/files/lib/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
-    device/samsung/prevail/files/lib/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
-    device/samsung/prevail/files/lib/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
-    device/samsung/prevail/files/lib/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
-    device/samsung/prevail/files/lib/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
-    device/samsung/prevail/files/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
-    device/samsung/prevail/files/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
-    device/samsung/prevail/files/lib/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
-    device/samsung/prevail/files/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
-    device/samsung/prevail/files/lib/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
-    device/samsung/prevail/files/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
-    device/samsung/prevail/files/lib/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
-    device/samsung/prevail/files/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
-    device/samsung/prevail/files/lib/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
-    device/samsung/prevail/files/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-    device/samsung/prevail/files/lib/libOmxQcelpDec.so:system/lib/libOmxQcelpDec.so \
-    device/samsung/prevail/files/lib/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
-    device/samsung/prevail/files/lib/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so
+    vendor/samsung/prevail/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
+    vendor/samsung/prevail/proprietary/lib/libOmxQcelpDec.so:system/lib/libOmxQcelpDec.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
+    vendor/samsung/prevail/proprietary/lib/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so
+
+# Fix Logcat
+PRODUCT_COPY_FILES += \
+    vendor/samsung/prevail/proprietary/lib/liblog.so:system/lib/liblog.so \
+    vendor/samsung/prevail/proprietary/bin/logcat:system/bin/logcat \
+    vendor/samsung/prevail/proprietary/bin/logwrapper:system/bin/logwrapper
+
+# Called in original Init / or needed by it
+PRODUCT_COPY_FILES += \
+    vendor/samsung/prevail/proprietary/lib/libwifitest.so:system/lib/libwifitest.so \
+    vendor/samsung/prevail/proprietary/lib/libwlandut.so:system/lib/libwlandut.so \
+    vendor/samsung/prevail/proprietary/lib/libwlservice.so:system/lib/libwlservice.so \
+    vendor/samsung/prevail/proprietary/bin/btld:system/bin/btld \
+    vendor/samsung/prevail/proprietary/bin/drexe:system/bin/drexe \
+    vendor/samsung/prevail/proprietary/bin/ifconfig:system/bin/ifconfig \
+    vendor/samsung/prevail/proprietary/bin/mfgloader:system/bin/mfgloader \
+    vendor/samsung/prevail/proprietary/bin/netcfg:system/bin/netcfg \
+    vendor/samsung/prevail/proprietary/bin/port-bridge:system/bin/port-bridge \
+    vendor/samsung/prevail/proprietary/bin/pppd_runner:system/bin/pppd_runner \
+    vendor/samsung/prevail/proprietary/bin/samsungloop:system/bin/samsungloop \
+    vendor/samsung/prevail/proprietary/bin/wlservice:system/bin/wlservice \
+
 
 
 $(call inherit-product, build/target/product/full_base.mk)
@@ -190,15 +220,12 @@ $(call inherit-product, vendor/cyanogen/products/common_full.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Include GSM stuff
-#$(call inherit-product, vendor/cyanogen/products/gsm.mk)
+# $(call inherit-product, vendor/cyanogen/products/gsm.mk)
 
 # Broadcom FM radio
 $(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/prevail/prevail-vendor.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/samsung/prevail/overlay
-$(call inherit-product-if-exists, device/samsung/prevail/prevail-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/prevail/overlay
 
@@ -209,7 +236,7 @@ PRODUCT_COPY_FILES += \
     vendor/cyanogen/prebuilt/ldpi/media/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.modversion=CyanogenMod-7.1.0-RC1-VAccAR
+    ro.modversion=CyanogenMod-7.1.0-RC1-HROARK
 
 PRODUCT_NAME := full_prevail
 PRODUCT_BRAND := samsung

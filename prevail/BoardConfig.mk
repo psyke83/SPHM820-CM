@@ -51,7 +51,7 @@ TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 BOARD_BML_BOOT := /dev/block/bml9
 BOARD_BML_RECOVERY := /dev/block/bml10
 TARGET_BOOTLOADER_BOARD_NAME := prevail
-TARGET_OTA_ASSERT_DEVICE := prevail,SPH-M820
+TARGET_OTA_ASSERT_DEVICE := SPH-M820
 BOARD_RECOVERY_HANDLES_MOUNT := true
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_LDPI_RECOVERY := true
@@ -95,15 +95,13 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun"
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
 # WiFi
-PRODUCT_WIRELESS_TOOLS := true
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
-BOARD_WLAN_DEVICE := bcm4329
-WIFI_DRIVER_MODULE_PATH := "/system/etc/wifi/dhd.ko"
+WIFI_DRIVER_MODULE_NAME := "dhd"
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/wifi/bcm4329_sta.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/wifi/bcm4329_aps.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_sta.bin nvram_path=/system/etc/wifi/nvram.txt"
-WIFI_DRIVER_MODULE_NAME := "dhd"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 
 # 3G
 BOARD_MOBILEDATA_INTERFACE_NAME := "ppp0"
@@ -116,7 +114,7 @@ JS_ENGINE := v8
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 # Should be bcm2049, but hardware is not yet supported
-BOARD_FM_DEVICE := bcm4325
+BOARD_FM_DEVICE := bcm4329
 #BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
-HAS_BCM20780 := true
-BOARD_GLOBAL_CFLAGS += -DHAS_BCM20780
+#HAS_BCM20780 := true
+#BOARD_GLOBAL_CFLAGS += -DHAS_BCM20780

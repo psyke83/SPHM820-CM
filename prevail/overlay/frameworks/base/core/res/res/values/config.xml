@@ -46,7 +46,7 @@
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"pdp\\d"</item>
         <item>"rmnet\\d"</item>
-        <item>"eth\\d"</item>
+        <item>"wlan\\d"</item>
     </string-array>
 
     <!-- The default iface on which to monitor data use -->
