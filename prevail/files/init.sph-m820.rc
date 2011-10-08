@@ -9,8 +9,10 @@ on init
     insmod /lib/modules/jbd2.ko
     insmod /lib/modules/ext4.ko
 
+
 # SprintHotspot
     insmod /lib/modules/hotspot_event_monitoring.ko
+
 
 on fs
 
@@ -70,6 +72,25 @@ on boot
 	mkdir /data/misc/dhcp 0770 dhcp dhcp
 	chown dhcp dhcp /data/misc/dhcp
 	mkdir /data/system 0775 system system
+
+# change the permissionsensor chips
+	chmod 0660 /dev/proximity
+	chmod 0660 /dev/mmc31xx
+	chmod 0660 /dev/bma_accel
+	chmod 0660 /dev/kr3dm_accel
+	chmod 0666 /data/misc/sensors/ecs_nvm
+	chmod 0666 /data/misc/sensors/accel_offset
+	chmod 0660 /dev/ecompass_ctrl
+	chown system system /dev/mmc31xx	
+	chown system system /dev/kr3dm_accel	
+	chown system system /dev/ecompass_ctrl	
+	chown system system /dev/proximity	
+
+# give read permission for others
+# this allows dumpsate to execute procrank
+# remove this for final build!
+	chmod 0444 /proc/kpagecount
+	chmod 0444 /proc/kpageflags
 
 # Permission for ril
 	mkdir /data/misc/radio 0774 radio radio
@@ -161,19 +182,13 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/wifi/bcm
    disabled
    oneshot
 
-service dhcpcd /system/bin/dhcpcd -BKL eth0
+service dhcpcd_eth0 /system/bin/dhcpcd -BKL eth0
    disabled
    oneshot
 
 service ifcfg_eth0 /system/bin/ifconfig eth0 up
     disabled
     oneshot
-
-###############################################
-service iprenew_eth0 /system/bin/dhcpcd -n
-	disabled
-	oneshot
-################################################
 
 #for WiFi MFG(TestMode)
 #SecFeatue.CDMA_WIFI
@@ -190,8 +205,6 @@ service wlservice /system/bin/wlservice
 service qmuxd /system/bin/qmuxd
     user radio
     group system radio inet
-
-#service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
 
 service DR-daemon /system/bin/drexe
     user system
@@ -220,7 +233,7 @@ service samsungloop /system/bin/samsungloop
 
 
 service btld /system/bin/logwrapper /system/bin/btld -hb 3000000 -hp /dev/ttyHS0 -lpm 1
-#    user root
+    user root
     group bluetooth net_bt_admin
     disabled
     oneshot
@@ -230,7 +243,7 @@ service obexd /system/bin/logwrapper /system/bin/obexd
     #socket dbus_bluetooth stream 660 bluetooth bluetooth
     # init.rc does not yet support applying capabilities, so run as root and
     # let obexd drop uid to bluetooth with the right linux capabilities
-#    user root
+        #user root
 	group bluetooth net_bt_admin
 	disabled
 	oneshot
@@ -242,12 +255,10 @@ service abtfilt /system/bin/abtfilt -c -d -z -n
     disabled
     oneshot
 
-#service dhcp-service /system/bin/netcfg eth0 dhcp
-#        oneshot
-#
 on property:dev.bootcomplete=1
         stop dhcp-service
         start dhcp-service
+
 service memsicd /system/bin/memsicd
     user system
     group system
@@ -264,6 +275,3 @@ chmod 555 /system/etc/mobileap/tethering_enable.sh
 chmod 555 /system/etc/mobileap/enable_uwbr.sh
 # end of Mobile AP
 #added by JH
-
-service collin_ph /system/bin/batt.sh
-    oneshot
