@@ -9,11 +9,6 @@ on init
     insmod /lib/modules/jbd2.ko
     insmod /lib/modules/ext4.ko
 
-
-# SprintHotspot
-    insmod /lib/modules/hotspot_event_monitoring.ko
-
-
 on fs
 
 # Mount partitions
@@ -152,126 +147,28 @@ on boot
 	mkdir /data/misc/dhcp 0777 system system
 	chmod 0666 /data/bdaddr
 
-service console /system/bin/sh
-    console
-
-# adbd is controlled by the persist.service.adb.enable system property
-service adbd /sbin/adbd
-    disabled
-
-# adbd on at boot in emulator
-on property:ro.kernel.qemu=1
-    start adbd
-
-on property:persist.service.adb.enable=1
-    start adbd
-    write /sys/module/g_android/parameters/product_id 9017
-
-on property:persist.service.adb.enable=0
-    stop adbd
-
-on property:persist.service.slate_mode=1
-    write /sys/class/power_supply/battery/batt_slate_mode 1
-
-on property:persist.service.slate_mode=0
-    write /sys/class/power_supply/battery/batt_slate_mode 0
-
-
-# to enable wifi
-service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/wifi/bcm_supp.conf
-   disabled
-   oneshot
-
-service dhcpcd_eth0 /system/bin/dhcpcd -BKL eth0
-   disabled
-   oneshot
-
-service ifcfg_eth0 /system/bin/ifconfig eth0 up
-    disabled
-    oneshot
-
-#for WiFi MFG(TestMode)
-#SecFeatue.CDMA_WIFI
-service mfgloader /system/bin/mfgloader
-    disabled
-    oneshot
-
-service wlservice /system/bin/wlservice
-    disabled
-    oneshot
-# end of wifi
-
-
-service qmuxd /system/bin/qmuxd
-    user radio
-    group system radio inet
-
-service DR-daemon /system/bin/drexe
-    user system
-    group system radio inet net_raw
-
-service mobex-daemon /system/bin/npsmobex
-    user root
-
-service pppd_cdma /system/bin/pppd_runner
-   user root
-   group radio cache inet misc system
-   disabled
-   oneshot
-
-service oovoo /system/bin/ovmservice
-    user media
-    group system audio camera graphics inet net_bt net_bt_admin
-
-service samsungloop /system/bin/samsungloop
-    user graphics
-    group graphics
-    disabled
-    oneshot
-
-# Start Bluetooth =========================================================================
-
-
-service btld /system/bin/logwrapper /system/bin/btld -hb 3000000 -hp /dev/ttyHS0 -lpm 1
-    user root
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service obexd /system/bin/logwrapper /system/bin/obexd
-    #socket bluetooth stream 660 bluetooth bluetooth
-    #socket dbus_bluetooth stream 660 bluetooth bluetooth
-    # init.rc does not yet support applying capabilities, so run as root and
-    # let obexd drop uid to bluetooth with the right linux capabilities
-        #user root
-	group bluetooth net_bt_admin
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+	group wifi inet
+        socket wpa_eth0 dgram 660 wifi wifi
 	disabled
 	oneshot
 
-# End of Bluetooth =========================================================================
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+	disabled
+	oneshot
 
+service iprenew_eth0 /system/bin/dhcpcd -n
+	disabled
+	oneshot
 
-service abtfilt /system/bin/abtfilt -c -d -z -n
-    disabled
-    oneshot
-
-on property:dev.bootcomplete=1
-        stop dhcp-service
-        start dhcp-service
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 \
+	--patchram /system/bin/BCM4329B1_002.002.023.0746.0827.hcd \
+	-d /dev/ttyHS0 
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
 
 service memsicd /system/bin/memsicd
-    user system
-    group system
-    oneshot
-
-#added by JH
-# for Mobile AP
-service mobileAP /system/bin/wlp2pservice
-
-chmod 555 /system/etc/mobileap/enable_ppp.sh
-chmod 555 /system/etc/mobileap/enable_eth.sh
-chmod 555 /system/etc/mobileap/initialize_nat.sh
-chmod 555 /system/etc/mobileap/tethering_enable.sh
-chmod 555 /system/etc/mobileap/enable_uwbr.sh
-# end of Mobile AP
-#added by JH
+	user system
+	group system
+	oneshot
