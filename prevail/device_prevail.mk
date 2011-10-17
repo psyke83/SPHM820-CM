@@ -109,7 +109,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
-    vendor/samsung/prevail/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/samsung/prevail/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # SD Card
 PRODUCT_COPY_FILES += \
