@@ -41,14 +41,16 @@ PRODUCT_PACKAGES += \
 
 # Hardware properties
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml
-#    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-#    frameworks/base/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml
+    vendor/samsung/prevail/proprietary/etc/permissions/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+    vendor/samsung/prevail/proprietary/etc/permissions/sec_feature.xml:system/etc/permissions/sec_feature.xml \
+    vendor/samsung/prevail/proprietary/framework/sec_feature.jar:system/framework/sec_feature.jar 
 
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES += \
@@ -123,6 +125,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
+    vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # SD Card

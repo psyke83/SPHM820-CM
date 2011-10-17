@@ -28,6 +28,7 @@ done
 
 FILES="
 
+
 etc/permissions/handheld_core_hardware.xml
 etc/permissions/android.hardware.camera.xml
 etc/permissions/android.hardware.telephony.cdma.xml
@@ -137,9 +138,10 @@ bin/samsungloop
 bin/wlservice
 
 
+
 "
 
 for FILE in $FILES; do
-	adb pull system/$FILE ../../../vendor/samsung/prevail/proprietary/$FILE
+	cp /home/vaccar/ee14sys/$FILE ../../../vendor/samsung/prevail/proprietary/$FILE
 done
 

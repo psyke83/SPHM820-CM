@@ -13,7 +13,7 @@ TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 
 # Kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/prevail/recovery_kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/prevail/recovery_kernel
 TARGET_PREBUILT_KERNEL := device/samsung/prevail/kernel
 BOARD_NAND_PAGE_SIZE := 4096 -s 128
 BOARD_KERNEL_CMDLINE := mem=336M console=ttyMSM2,115200 hw=9
@@ -95,16 +95,18 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun"
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
 # WiFi
+BOARD_WLAN_DEVICE := bcm4329
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
 WIFI_DRIVER_MODULE_NAME := "dhd"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH := "/system/etc/wifi/bcm4329_sta.bin"
-WIFI_DRIVER_FW_AP_PATH := "/system/etc/wifi/bcm4329_aps.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
+WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/vendor/firmware/nvram_net.txt"
+BOARD_WEXT_NO_COMBO_SCAN    := true
 
 # 3G
-BOARD_MOBILEDATA_INTERFACE_NAME := "ppp0"
+# BOARD_MOBILEDATA_INTERFACE_NAME := "ppp0"
 
 # JIT / Optimizations
 WITH_DEXPREOPT := true
