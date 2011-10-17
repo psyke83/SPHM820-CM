@@ -41,16 +41,7 @@ PRODUCT_PACKAGES += \
 
 # Hardware properties
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/etc/permissions/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    vendor/samsung/prevail/proprietary/etc/permissions/sec_feature.xml:system/etc/permissions/sec_feature.xml \
-    vendor/samsung/prevail/proprietary/framework/sec_feature.jar:system/framework/sec_feature.jar 
+
 
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES += \
@@ -115,14 +106,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/prevail/files/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
     vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-run-hooks:system/etc/dhcpcd/dhcpcd-run-hooks \
-    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-hooks/01-test:system/etc/dhcpcd/dhcpcd-hooks/01-test \
-    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-hooks/20-dns.conf:system/etc/dhcpcd/dhcpcd-hooks/20-dns.conf \
-    vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd-hooks/95-configured:system/etc/dhcpcd/dhcpcd-hooks/95-configured \
-    vendor/samsung/prevail/proprietary/bin/dhcpcd:system/bin/dhcpcd \
-    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_mfg.bin:system/etc/wifi/bcm4329_mfg.bin \
-    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_sta.bin:system/etc/wifi/bcm4329_sta.bin \
-    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
@@ -197,22 +180,6 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/bin/logcat:system/bin/logcat \
     vendor/samsung/prevail/proprietary/bin/logwrapper:system/bin/logwrapper
 
-# Called in original Init / or needed by it
-PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/lib/libwifitest.so:system/lib/libwifitest.so \
-    vendor/samsung/prevail/proprietary/lib/libwlandut.so:system/lib/libwlandut.so \
-    vendor/samsung/prevail/proprietary/lib/libwlservice.so:system/lib/libwlservice.so \
-    vendor/samsung/prevail/proprietary/bin/btld:system/bin/btld \
-    vendor/samsung/prevail/proprietary/bin/drexe:system/bin/drexe \
-    vendor/samsung/prevail/proprietary/bin/ifconfig:system/bin/ifconfig \
-    vendor/samsung/prevail/proprietary/bin/mfgloader:system/bin/mfgloader \
-    vendor/samsung/prevail/proprietary/bin/netcfg:system/bin/netcfg \
-    vendor/samsung/prevail/proprietary/bin/port-bridge:system/bin/port-bridge \
-    vendor/samsung/prevail/proprietary/bin/pppd_runner:system/bin/pppd_runner \
-    vendor/samsung/prevail/proprietary/bin/samsungloop:system/bin/samsungloop \
-    vendor/samsung/prevail/proprietary/bin/wlservice:system/bin/wlservice \
-
-
 
 $(call inherit-product, build/target/product/full_base.mk)
 
@@ -222,8 +189,6 @@ $(call inherit-product, vendor/cyanogen/products/common_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-# Include GSM stuff
-# $(call inherit-product, vendor/cyanogen/products/gsm.mk)
 
 # Broadcom FM radio
 $(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)

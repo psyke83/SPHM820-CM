@@ -29,17 +29,6 @@ done
 FILES="
 
 
-etc/permissions/handheld_core_hardware.xml
-etc/permissions/android.hardware.camera.xml
-etc/permissions/android.hardware.telephony.cdma.xml
-etc/permissions/android.hardware.location.xml
-etc/permissions/android.hardware.location.gps.xml
-etc/permissions/android.hardware.wifi.xml
-etc/permissions/android.hardware.touchscreen.multitouch.xml
-etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
-etc/permissions/sec_feature.xml
-framework/sec_feature.jar
-
 usr/keylayout/vino-headset.kl
 usr/keylayout/vino-keypad.kl
 usr/keylayout/qwerty.kl
@@ -62,14 +51,6 @@ lib/libmmipl.so
 lib/libmmjpeg.so
 
 etc/dhcpcd/dhcpcd.conf
-etc/dhcpcd/dhcpcd-run-hooks
-etc/dhcpcd/dhcpcd-hooks/01-test
-etc/dhcpcd/dhcpcd-hooks/20-dns.conf
-etc/dhcpcd/dhcpcd-hooks/95-configured
-bin/dhcpcd
-etc/wifi/bcm4329_mfg.bin \
-etc/wifi/bcm4329_sta.bin \
-etc/wifi/bcm4329_aps.bin \
 etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
 etc/wifi/wpa_supplicant.conf
@@ -123,20 +104,6 @@ lib/libomx_avcdec_sharedlibrary.so
 lib/liblog.so
 bin/logcat
 bin/logwrapper
-
-lib/libwifitest.so
-lib/libwlandut.so
-lib/libwlservice.so
-bin/btld
-bin/drexe
-bin/ifconfig
-bin/mfgloader
-bin/netcfg
-bin/port-bridge
-bin/pppd_runner
-bin/samsungloop
-bin/wlservice
-
 
 
 "
