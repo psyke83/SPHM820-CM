@@ -11,7 +11,6 @@ ro.PERCEPTIBLE_APP_ADJ=0
 ro.ril.samsung_cdma=true
 ro.telephony.default_network=4
 ro.telephony.call_ring.multiple=false
-ro.telephony.sends_barcount=1
 ro.telephony.ril_class=samsung
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/smd0
