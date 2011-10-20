@@ -53,11 +53,12 @@ android.keylayout.vino-headset=/system/usr/keylayout/vino-headset.kl
 android.keychar.vino-keypad=/system/usr/keychars/vino-keypad.kcm.bin
 
 # Performance settings
-debug.sf.hw=0
+debug.sf.hw=1
+debug.composition.type=mdp
 ro.compcache.default=18
 dalvik.vm.dexopt-flags=m=y
 dalvik.vm.execution-mode=int:jit
-dalvik.vm.heapsize=32m
+dalvik.vm.heapsize=64m
 persist.sys.purgeable_assets=1
 persist.sys.use_dithering=1
 
