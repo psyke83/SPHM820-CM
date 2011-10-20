@@ -26,8 +26,7 @@ BOARD_EGL_CFG := device/samsung/prevail/files/lib/egl/egl.cfg
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_USE_SCREENCAP := true
-#BOARD_NO_RGBX_8888 := true
-TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
+BOARD_NO_RGBX_8888 := true
 
 # cat /proc/LinuStoreIII/bmlinfo
 # FSR VERSION: FSR_1.2.1p1_b139_RTM
@@ -67,9 +66,8 @@ TARGET_RECOVERY_PRE_COMMAND := "echo 3 > /proc/sys/vm/drop_caches; sync"
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Audio
-TARGET_PROVIDES_LIBAUDIO := true 
+TARGET_PROVIDES_LIBAUDIO := true
 
-BOARD_USES_LIBSECRIL_STUB := true
 # Sensors
 TARGET_USES_OLD_LIBSENSORS_HAL:=true
 
@@ -115,7 +113,6 @@ JS_ENGINE := v8
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-# Should be bcm2049, but hardware is not yet supported
 BOARD_FM_DEVICE := bcm4329
 #BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 #HAS_BCM20780 := true
