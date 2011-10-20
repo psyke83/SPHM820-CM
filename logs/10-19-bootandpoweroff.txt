@@ -1,0 +1,919 @@
+--------- beginning of /dev/log/main
+I/cm      (   85): Welcome to Android 2.3.7 / CyanogenMod-7.1.0-RC1-HROARK 
+I/cm      (   86):                                                 _  
+I/cm      (   87):  __ __ _ ___  _ _  __  ___  __ _ _  _  _  __  __)) 
+I/cm      (   88): ((_ \(/'((_( ((\( ((_)((_( (('((\( ((`1( ((_)((_(  
+I/cm      (   89):      ))                 _)) 
+I/cm      (   90):   
+I/mountsd (  104): Checking filesystems.. 
+I/mountsd (  119): /sd-ext successfully mounted 
+I/DEBUG   (  137): debuggerd: Oct 17 2011 03:28:30
+--------- beginning of /dev/log/system
+I/Vold    (  135): Vold 2.1 (the revenge) firing up
+D/Vold    (  135): Volume sdcard state changing -1 (Initializing) -> 0 (No-Media)
+D/Vold    (  135): Volume sdcard state changing 0 (No-Media) -> 2 (Pending)
+D/Vold    (  135): Volume sdcard state changing 2 (Pending) -> 1 (Idle-Unmounted)
+I/Netd    (  136): Netd 1.0 starting
+W/Vold    (  135): Ignoring unknown switch 'MSM72K_UDC'
+D/AndroidRuntime(  139): 
+D/AndroidRuntime(  139): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  139): Heap size: -Xmx32m
+D/AndroidRuntime(  139): CheckJNI is OFF
+I/        (  140): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  140): get_audpp_filter
+I/AudioHardwareMSM72XX(  140): open /system/etc/AudioFilter.csv success.
+I/AudioHardwareMSM72XX(  140): EQ flag = 00.
+E/AudioHardwareMSM72XX(  140): malformatted pcm control buffer
+I/AudioHardwareMSM72XX(  140): failed to set audpp parameters, exiting.
+D/AudioHardwareInterface(  140): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  140): Set master volume to 5.
+I/CameraService(  140): CameraService started (pid=140)
+I/AudioFlinger(  140): AudioFlinger's thread 0xcc60 ready to run
+D/AudioFlinger(  140): setParameters(): io 1, keyvalue routing=2, tid 186, calling tid 140
+E/AudioHardwareMSM72XX(  140): doRouting CALLED, outputDevices = 0x2, mFmRadioEnabled = 0
+I/AudioHardwareMSM72XX(  140): Routing audio to Speakerphone
+W/AudioHardwareMSM72XX(  140): Routing to 30 really (current: -1)
+D/AudioHardwareMSM72XX(  140): doAudioRouteOrMute() device 1e, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+E/AudioHardwareMSM72XX(  140): doRouting CALLED, outputDevices = 0x2, mFmRadioEnabled = 0
+I/AudioHardwareMSM72XX(  140): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  140): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  140): Setting in-call volume to 5 (available range is 0 to 7)
+I/SamplingProfilerIntegration(  139): Profiler is disabled.
+I/Zygote  (  139): Preloading classes...
+E/Zygote  (  139): setreuid() failed. errno: 30
+D/dalvikvm(  139): GC_EXPLICIT freed 48K, 77% free 238K/1024K, external 0K/0K, paused 5ms
+D/dalvikvm(  139): GC_EXPLICIT freed 1K, 72% free 288K/1024K, external 0K/0K, paused 4ms
+D/dalvikvm(  139): GC_EXPLICIT freed 20K, 69% free 322K/1024K, external 0K/0K, paused 5ms
+I/bluetooth_ScoSocket.cpp(  139): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  139): Entry name = Motorola HF850 ScoTypes = 0x7
+D/dalvikvm(  139): GC_EXPLICIT freed 16K, 65% free 360K/1024K, external 0K/0K, paused 6ms
+D/dalvikvm(  139): GC_EXPLICIT freed 25K, 62% free 389K/1024K, external 0K/0K, paused 6ms
+D/dalvikvm(  139): GC_EXPLICIT freed 23K, 57% free 449K/1024K, external 0K/0K, paused 10ms
+D/dalvikvm(  139): GC_EXPLICIT freed 99K, 46% free 555K/1024K, external 0K/0K, paused 9ms
+D/dalvikvm(  139): GC_EXPLICIT freed 272K, 27% free 893K/1219K, external 0K/0K, paused 19ms
+D/dalvikvm(  139): GC_EXPLICIT freed 21K, 22% free 961K/1219K, external 0K/0K, paused 16ms
+D/szipinf (  139): Initializing inflate state
+D/dalvikvm(  139): GC_EXPLICIT freed 27K, 16% free 1030K/1219K, external 0K/0K, paused 18ms
+D/dalvikvm(  139): GC_EXPLICIT freed 47K, 8% free 1312K/1411K, external 0K/0K, paused 25ms
+D/dalvikvm(  139): GC_EXPLICIT freed 25K, 5% free 1342K/1411K, external 0K/0K, paused 25ms
+D/dalvikvm(  139): GC_EXPLICIT freed 29K, 4% free 1367K/1411K, external 0K/0K, paused 25ms
+D/dalvikvm(  139): GC_EXPLICIT freed 14K, 5% free 1407K/1475K, external 0K/0K, paused 25ms
+W/Zygote  (  139): Class not found for preloading: android.widget.TextView$SelectionModifierCursorController$1
+D/dalvikvm(  139): GC_EXPLICIT freed 29K, 3% free 1432K/1475K, external 0K/0K, paused 26ms
+D/dalvikvm(  139): GC_EXPLICIT freed 30K, 5% free 1469K/1539K, external 0K/0K, paused 27ms
+D/dalvikvm(  139): GC_EXPLICIT freed 38K, 4% free 1487K/1539K, external 0K/0K, paused 27ms
+D/dalvikvm(  139): GC_EXPLICIT freed 41K, 7% free 1501K/1603K, external 0K/0K, paused 27ms
+D/dalvikvm(  139): GC_EXPLICIT freed 55K, 6% free 1515K/1603K, external 0K/0K, paused 27ms
+D/dalvikvm(  139): GC_FOR_MALLOC freed 2865K, 56% free 2258K/5123K, external 0K/0K, paused 88ms
+D/dalvikvm(  139): GC_EXPLICIT freed 2422K, 51% free 2511K/5123K, external 0K/0K, paused 78ms
+D/dalvikvm(  139): GC_EXPLICIT freed 148K, 50% free 2574K/5123K, external 0K/0K, paused 54ms
+D/dalvikvm(  139): GC_EXPLICIT freed 73K, 50% free 2600K/5123K, external 0K/0K, paused 53ms
+D/dalvikvm(  139): GC_EXPLICIT freed 36K, 49% free 2617K/5123K, external 0K/0K, paused 51ms
+D/dalvikvm(  139): GC_EXPLICIT freed 31K, 49% free 2640K/5123K, external 0K/0K, paused 53ms
+D/dalvikvm(  139): GC_EXPLICIT freed 38K, 49% free 2663K/5123K, external 0K/0K, paused 53ms
+I/Zygote  (  139): ...preloaded 1829 classes in 7587ms.
+E/Zygote  (  139): setreuid() failed. errno: 30
+D/dalvikvm(  139): GC_EXPLICIT freed 18K, 49% free 2662K/5123K, external 0K/0K, paused 53ms
+I/Zygote  (  139): Preload resources disabled, skipped.
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 49% free 2662K/5123K, external 0K/0K, paused 52ms
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 49% free 2662K/5123K, external 0K/0K, paused 53ms
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 49% free 2662K/5123K, external 0K/0K, paused 52ms
+I/dalvikvm(  139): System server process 193 has been created
+I/Zygote  (  139): Accepting command socket connections
+I/sysproc (  193): Entered system_init()
+I/sysproc (  193): ServiceManager: 0x842d8
+I/SurfaceFlinger(  193): SurfaceFlinger is starting
+I/SurfaceFlinger(  193): dithering enabled
+I/SurfaceFlinger(  193): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+E/SurfaceFlinger(  193): Couldn't open /sys/power/wait_for_fb_sleep or /sys/power/wait_for_fb_wake
+I/prevail.gralloc(  193): using (fd=25)
+I/prevail.gralloc(  193): id           = msmfb30_30001
+I/prevail.gralloc(  193): xres         = 320 px
+I/prevail.gralloc(  193): yres         = 480 px
+I/prevail.gralloc(  193): xres_virtual = 320 px
+I/prevail.gralloc(  193): yres_virtual = 960 px
+I/prevail.gralloc(  193): bpp          = 32
+I/prevail.gralloc(  193): r            = 24:8
+I/prevail.gralloc(  193): g            = 16:8
+I/prevail.gralloc(  193): b            =  8:8
+I/prevail.gralloc(  193): width        = 42 mm (193.523804 dpi)
+I/prevail.gralloc(  193): height       = 69 mm (176.695648 dpi)
+I/prevail.gralloc(  193): refresh rate = 0.37 Hz
+W/SurfaceFlinger(  193): H/W composition disabled
+D/libEGL  (  193): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  193): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  193): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  193): loaded /system/lib/egl/libGLESv2_adreno200.so
+I/SurfaceFlinger(  193): EGL informations:
+I/SurfaceFlinger(  193): # of configs : 26
+I/SurfaceFlinger(  193): vendor    : Android
+I/SurfaceFlinger(  193): version   : 1.4 Android META-EGL
+I/SurfaceFlinger(  193): extensions: EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_ANDROID_image_native_buffer EGL_ANDROID_swap_rectangle EGL_ANDROID_get_render_buffer 
+I/SurfaceFlinger(  193): Client API: OpenGL ES
+I/SurfaceFlinger(  193): EGLSurface: 8-8-8-0, config=0x14
+I/SurfaceFlinger(  193): OpenGL informations:
+I/SurfaceFlinger(  193): vendor    : Android
+I/SurfaceFlinger(  193): renderer  : Android PixelFlinger 1.4
+I/SurfaceFlinger(  193): version   : OpenGL ES-CM 1.0
+I/SurfaceFlinger(  193): extensions: GL_OES_byte_coordinates GL_OES_fixed_point GL_OES_single_precision GL_OES_read_format GL_OES_compressed_paletted_texture GL_OES_draw_texture GL_OES_matrix_get GL_OES_query_matrix GL_OES_EGL_image GL_OES_compressed_ETC1_RGB8_texture GL_ARB_texture_compression GL_ARB_texture_non_power_of_two GL_ANDROID_user_clip_plane GL_ANDROID_vertex_buffer_object GL_ANDROID_generate_mipmap 
+I/SurfaceFlinger(  193): GL_MAX_TEXTURE_SIZE = 4096
+I/SurfaceFlinger(  193): GL_MAX_VIEWPORT_DIMS = 4096
+I/SurfaceFlinger(  193): flags = 000c0000
+D/SensorService(  193): nuSensorService starting...
+D/SensorService(  193): Opened sensors in backwards compat mode
+I/SensorService(  193): KR3DM
+I/SensorService(  193): MMC314X
+I/SensorService(  193): Mag & Acc Combo Orientation Sensor
+I/sysproc (  193): System server: starting Android runtime.
+I/sysproc (  193): System server: starting Android services.
+D/SensorService(  193): nuSensorService thread starting...
+I/SystemServer(  193): Entered the Android system server!
+I/sysproc (  193): System server: entering thread pool.
+I/SystemServer(  193): Entropy Service
+I/SystemServer(  193): Power Manager
+I/SystemServer(  193): Activity Manager
+I/ActivityManager(  193): Memory class: 32
+D/libEGL  (  207): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  207): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  207): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  207): loaded /system/lib/egl/libGLESv2_adreno200.so
+W/zipro   (  207): Unable to open zip '/data/local/bootanimation.zip': No such file or directory
+I/SystemServer(  193): Telephony Registry
+I/SystemServer(  193): Package Manager
+I/Installer(  193): connecting...
+I/installd(  142): new connection
+I/pixelflinger(  207): Needs: n=0x03010104 p=0x00000077 t0=0x00008004 t1=0x00000000
+I/ARMAssembler(  207): generated scanline__00000077:03010104_00008004_00000000 [ 84 ipp] (103 ins) at [0x407901e8:0x40790384] in 316667 ns
+D/dalvikvm(  193): GC_CONCURRENT freed 136K, 47% free 3042K/5639K, external 0K/0K, paused 5ms+6ms
+D/dalvikvm(  193): GC_CONCURRENT freed 404K, 48% free 3150K/6023K, external 0K/0K, paused 5ms+14ms
+D/dalvikvm(  193): GC_CONCURRENT freed 173K, 44% free 3448K/6151K, external 0K/0K, paused 5ms+27ms
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/dalvikvm(  193): GC_CONCURRENT freed 248K, 44% free 3642K/6407K, external 0K/0K, paused 5ms+66ms
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+W/PackageParser(  193): Unknown element under <manifest>: meta-data at /system/app/Cyanbread.apk Binary XML file line #43
+D/dalvikvm(  193): GC_CONCURRENT freed 244K, 42% free 3886K/6663K, external 0K/0K, paused 5ms+44ms
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+W/PackageParser(  193): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #124
+D/szipinf (  193): Initializing inflate state
+W/PackageParser(  193): Unknown element under <manifest>: meta-data at /system/app/Androidian.apk Binary XML file line #43
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/PackageManager(  193): No files in app dir /vendor/app
+I/PackageManager(  193): Time to scan packages: 6.241 seconds
+W/PackageManager(  193): Unknown permission com.android.vending.permission.UPDATE_MARKET_FAILURE in package com.android.vending.updater
+W/PackageManager(  193): Unknown permission android.permission.ADD_SYSTEM_SERVICE in package com.android.phone
+W/PackageManager(  193): Unknown permission android.permission.READ_EXTERNAL_STORAGE in package com.cyanogenmod.cmparts
+W/PackageManager(  193): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.google.android.talk
+W/PackageManager(  193): Unknown permission android.permission.READ_OWNER_DATA in package com.android.setupwizard
+W/PackageManager(  193): Unknown permission android.permission.WRITE_OWNER_DATA in package com.android.setupwizard
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.google.android.apps.uploader
+W/PackageManager(  193): Unknown permission com.google.android.voicesearch.SHORTCUTS_ACCESS in package com.google.android.googlequicksearchbox
+W/PackageManager(  193): Unknown permission android.permission.READ_EXTERNAL_STORAGE in package com.android.vending
+W/PackageManager(  193): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.vending (protectionLevel=2 flags=0x2be45)
+W/PackageManager(  193): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  193): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  193): GC_CONCURRENT freed 364K, 41% free 4083K/6919K, external 0K/0K, paused 5ms+10ms
+D/dalvikvm(  193): GC_EXPLICIT freed 228K, 44% free 3969K/6983K, external 0K/0K, paused 125ms
+I/SystemServer(  193): Account Manager
+D/szipinf (  193): Initializing inflate state
+I/SystemServer(  193): Content Manager
+D/szipinf (  193): Initializing inflate state
+I/SystemServer(  193): System Content Providers
+I/ActivityThread(  193): Pub settings: com.android.providers.settings.SettingsProvider
+I/SystemServer(  193): Battery Service
+I/SystemServer(  193): Lights Service
+I/SystemServer(  193): Vibrator Service
+D/SettingsProvider(  193): cache for settings table 'secure' rows=35; fullycached=true
+D/SettingsProvider(  193): cache for settings table 'system' rows=58; fullycached=true
+D/AlarmManagerService(  193): Kernel timezone updated to 240 minutes west of GMT
+I/SystemServer(  193): Alarm Manager
+I/SystemServer(  193): Init Watchdog
+I/SystemServer(  193): Window Manager
+I/InputManager(  193): Initializing input manager
+I/WindowManager(  193): names for haptic settings for haptic long array: haptic_long_array default: haptic_long_array_default
+I/WindowManager(  193): pulled string: 0,1,20,30 default: 0,1,20,30
+I/WindowManager(  193): haptic done for long array!
+I/WindowManager(  193): names for haptic settings for haptic down array: haptic_down_array default: haptic_down_array_default
+I/WindowManager(  193): pulled string: 0,10,20,30 default: 0,10,20,30
+I/WindowManager(  193): haptic done for down array!
+I/WindowManager(  193): names for haptic settings for haptic tap array: haptic_tap_array default: haptic_tap_array_default
+I/WindowManager(  193): pulled string: 50 default: 50
+I/WindowManager(  193): haptic done for tap array!
+I/WindowManager(  193): names for haptic settings for haptic up array: haptic_up_array default: haptic_up_array_default
+I/WindowManager(  193): pulled string: 20,30 default: 20,30
+I/WindowManager(  193): haptic done for up array!
+I/InputManager(  193): Starting input manager
+I/SystemServer(  193): Bluetooth Service
+I/EventHub(  193): New keyboard: device->id=0x20000 devname='cytma340_ts_input' propName='hw.keyboards.131072.devname' keylayout='/system/usr/keylayout/qwerty.kl'
+I/EventHub(  193): New device: path=/dev/input/event2 name=cytma340_ts_input id=0x20000 (of 0x1) index=1 fd=98 classes=0x15
+E/KeyLayoutMap(  193): /system/usr/keylayout/vino-keypad.kl:96: expected keycode, got 'SMILY'
+I/EventHub(  193): New keyboard: device->id=0x10001 devname='vino-keypad' propName='hw.keyboards.65537.devname' keylayout='/system/usr/keylayout/vino-keypad.kl'
+I/EventHub(  193): New device: path=/dev/input/event1 name=vino-keypad id=0x10001 (of 0x2) index=2 fd=99 classes=0x1
+E/KeyLayoutMap(  193): /system/usr/keylayout/vino-headset.kl:2: expected keycode, got 'SEND_END'
+I/EventHub(  193): New keyboard: device->id=0x10002 devname='vino-headset' propName='hw.keyboards.65538.devname' keylayout='/system/usr/keylayout/vino-headset.kl'
+I/EventHub(  193): New device: path=/dev/input/event0 name=vino-headset id=0x10002 (of 0x3) index=3 fd=100 classes=0x1
+I/InputReader(  193): Device added: id=0x10002, name=vino-headset, sources=00000101
+I/InputReader(  193): Device added: id=0x0, name=vino-keypad, sources=00000101
+I/InputReader(  193): Device added: id=0x20000, name=cytma340_ts_input, sources=00001103
+I/InputManager-Callbacks(  193): No input device calibration properties found for device vino-headset.
+I/InputManager-Callbacks(  193): No input device calibration properties found for device vino-keypad.
+I/InputManager-Callbacks(  193): No input device calibration properties found for device cytma340_ts_input.
+I/BluetoothProfileState(  193): Message:Entering Stable State
+I/BluetoothProfileState(  193): Message:Entering Stable State
+E/SystemServer(  193): Bluetooth Network Service
+D/BluetoothService(  193): Bluetooth state 10 -> 11
+I/SystemServer(  193): Device Policy
+I/SystemServer(  193): Status Bar
+I/SystemServer(  193): Clipboard Service
+I/SystemServer(  193): Input Method Service
+D/szipinf (  193): Initializing inflate state
+I/InputManagerService(  193): Enabled input methods: com.android.inputmethod.latin/.LatinIME
+I/SystemServer(  193): NetStat Service
+I/SystemServer(  193): NetworkManagement Service
+I/SystemServer(  193): Connectivity Service
+I/ConnectivityService(  193): hostname has been set: android-8e8242f24ae7fe99
+I/WifiService(  193): WifiService starting up with Wi-Fi enabled
+D/NetworkManagmentService(  193): Registering observer
+I/SystemServer(  193): Throttle Service
+I/SystemServer(  193): Accessibility Manager
+I/SystemServer(  193): Mount Service
+I/SystemServer(  193): Profile Manager
+D/VoldCmdListener(  135): volume list
+D/dalvikvm(  193): GC_CONCURRENT freed 187K, 39% free 4293K/6983K, external 0K/0K, paused 6ms+55ms
+I/PackageManager(  193): Updating external media status from unmounted to unmounted
+D/VoldCmdListener(  135): share status ums
+D/ProfileService(  193): Found active: 7312843f-0f1d-4f5a-b454-36027ccf3cb1
+D/ProfileService(  193): Set active profile to: 7312843f-0f1d-4f5a-b454-36027ccf3cb1 - Default
+D/ProfileService(  193): Saving profile data...
+D/ProfileService(  193): Save completed.
+I/SystemServer(  193): Notification Manager
+I/SystemServer(  193): Device Storage Monitor
+I/SystemServer(  193): Location Manager
+I/SystemServer(  193): Search Service
+I/SystemServer(  193): DropBox Service
+I/SystemServer(  193): Wallpaper Service
+I/SystemServer(  193): Audio Service
+I/bluedroid(  193): Starting hciattach daemon
+D/AudioHardwareMSM72XX(  140): setVoiceVolume(0.800000)
+I/AudioHardwareMSM72XX(  140): Setting in-call volume to 4 (available range is 0 to 7)
+D/AudioHardwareInterface(  140): setMode(NORMAL)
+W/AudioPolicyManagerBase(  140): setPhoneState() setting same state 0
+I/SystemServer(  193): Headset Observer
+I/SystemServer(  193): Dock Observer
+W/DockObserver(  193): This kernel does not have dock station support
+W/UsbDeviceSettingsManager(  193): settings file not found
+I/SystemServer(  193): USB Service
+I/UsbService(  193): This kernel does not have USB configuration switch support
+I/UsbService(  193): Trying legacy USB configuration switch support
+W/UsbService(  193): This kernel does not have USB composite class support
+D/Tethering(  193): eth0 is not a tetherable iface, ignoring
+D/dalvikvm(  193): GC_CONCURRENT freed 427K, 40% free 4407K/7303K, external 0K/0K, paused 10ms+52ms
+I/SystemServer(  193): UI Mode Manager Service
+I/SystemServer(  193): Backup Service
+V/BackupManagerService(  193): No ancestral data
+I/BackupManagerService(  193): Found stale backup journal, scheduling
+I/BackupManagerService(  193):   android
+I/BackupManagerService(  193):   com.android.browser
+I/BackupManagerService(  193):   com.android.inputmethod.latin
+I/BackupManagerService(  193):   com.android.providers.settings
+I/BackupManagerService(  193):   com.android.providers.userdictionary
+I/BackupManagerService(  193):   com.android.vending
+I/BackupManagerService(  193): Backup enabled => false
+I/SystemServer(  193): AppWidget Service
+I/SystemServer(  193): Recognition Service
+I/SystemServer(  193): DiskStats Service
+I/WindowManager(  193): SAFE MODE not enabled
+D/dalvikvm(  193): JIT started for system_server
+I/SystemServer(  193): AssetRedirectionManager Service
+E/lights  (  193): write_int failed to open /sys/class/leds/button-backlight/brightness
+I/power   (  193): *** set_screen_state 1
+D/PowerManagerService(  193): system ready!
+I/ActivityManager(  193): System now ready
+I/SystemServer(  193): Making services ready
+I/InputReader(  193): Device reconfigured: id=0x20000, name=cytma340_ts_input, display size is now 320x480
+I/StatusBarManagerService(  193): Starting service: ComponentInfo{com.android.systemui/com.android.systemui.statusbar.StatusBarService}
+I/InputManager-Callbacks(  193): No virtual keys found for device cytma340_ts_input.
+I/ActivityManager(  193): Config changed: { scale=1.0 imsi=0/0 loc=en_US touch=3 keys=1/1/2 nav=1/1 orien=1 layout=18 uiMode=0 seq=2 themeResource=null}
+I/Zygote  (  193): Process: zygote socket opened
+I/ActivityManager(  193): Start proc com.android.systemui for service com.android.systemui/.statusbar.StatusBarService: pid=265 uid=1000 gids={1015, 3002, 3001, 3003}
+I/ActivityManager(  193): Config changed: { scale=1.0 imsi=0/0 loc=en_US touch=3 keys=1/1/2 nav=1/1 orien=1 layout=18 uiMode=17 seq=3 themeResource=null}
+W/RecognitionManagerService(  193): no available voice recognition services found
+D/szipinf (  193): Initializing inflate state
+I/ActivityManager(  193): Start proc com.android.settings for broadcast com.android.settings/.widget.SettingsAppWidgetProvider: pid=277 uid=1000 gids={1015, 3002, 3001, 3003}
+D/dalvikvm(  193): GC_CONCURRENT freed 424K, 40% free 4492K/7431K, external 0K/0K, paused 16ms+95ms
+D/szipinf (  265): Initializing inflate state
+I/wpa_supplicant(  273): CTRL-EVENT-STATE-CHANGE id=-1 state=2 BSSID=00:00:00:00:00:00
+I/wpa_supplicant(  273): Trying to associate with 34:ef:44:db:13:49 (SSID='borj3' freq=2442 MHz)
+I/wpa_supplicant(  273): CTRL-EVENT-STATE-CHANGE id=-1 state=3 BSSID=34:ef:44:db:13:49
+I/bluedroid(  193): Starting bluetoothd deamon
+V/WifiStateTracker(  193): Connection to supplicant established, state=ASSOCIATING
+D/szipinf (  277): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+D/szipinf (  193): Initializing inflate state
+I/ActivityManager(  193): Start proc com.android.inputmethod.latin for service com.android.inputmethod.latin/.LatinIME: pid=288 uid=10033 gids={}
+D/NetworkManagmentService(  193): Registering observer
+I/wpa_supplicant(  273): CTRL-EVENT-STATE-CHANGE id=0 state=4 BSSID=34:ef:44:db:13:49
+V/WifiMonitor(  193): Event [CTRL-EVENT-STATE-CHANGE id=0 state=4 BSSID=34:ef:44:db:13:49]
+V/WifiStateTracker(  193): Changing supplicant state: ASSOCIATING ==> ASSOCIATED
+I/wpa_supplicant(  273): Associated with 34:ef:44:db:13:49
+I/wpa_supplicant(  273): CTRL-EVENT-STATE-CHANGE id=0 state=7 BSSID=00:00:00:00:00:00
+I/wpa_supplicant(  273): CTRL-EVENT-CONNECTED - Connection to 34:ef:44:db:13:49 completed (auth) [id=0 id_str=]
+V/WifiMonitor(  193): Event [Associated with 34:ef:44:db:13:49]
+V/WifiMonitor(  193): Event [CTRL-EVENT-STATE-CHANGE id=0 state=7 BSSID=00:00:00:00:00:00]
+V/WifiMonitor(  193): Event [CTRL-EVENT-CONNECTED - Connection to 34:ef:44:db:13:49 completed (auth) [id=0 id_str=]]
+V/WifiStateTracker(  193): Changing supplicant state: ASSOCIATED ==> COMPLETED
+V/WifiStateTracker(  193): New network state is CONNECTED
+W/BluetoothHeadset(  193): Proxy not attached to service
+W/BluetoothHeadset(  193): Proxy not attached to service
+D/WifiStateTracker(  193): DHCP request started
+I/ActivityManager(  193): Start proc com.android.phone for added application com.android.phone: pid=294 uid=1001 gids={3002, 3001, 3003, 1015}
+I/ActivityManager(  193): Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000000 cmp=com.android.launcher/.Launcher } from pid 0
+W/ProcessStats(  193): Skipping unknown process pid 287
+D/szipinf (  193): Initializing inflate state
+D/SntpClient(  193): request time failed: java.net.UnknownHostException: north-america.pool.ntp.org
+D/SntpClient(  193): request time failed: java.net.UnknownHostException: north-america.pool.ntp.org
+I/ActivityManager(  193): Start proc com.android.launcher for activity com.android.launcher/.Launcher: pid=310 uid=10057 gids={1015}
+D/dalvikvm(  265): GC_EXTERNAL_ALLOC freed 98K, 48% free 2809K/5379K, external 0K/0K, paused 542ms
+D/dalvikvm(  193): GC_CONCURRENT freed 244K, 37% free 4725K/7495K, external 0K/0K, paused 7ms+13ms
+W/SharedBufferStack(  207): waitForCondition(LockCondition) timed out (identity=1, status=0). CPU may be pegged. trying again.
+D/szipinf (  288): Initializing inflate state
+D/szipinf (  294): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+I/StatusBarManagerService(  193): registerStatusBar bar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@4074f8a0
+I/PowerWidget(  265): Clearing any old widget stuffs
+I/PowerWidget(  265): Setting up widget
+I/PowerWidget(  265): Default buttons being loaded
+I/PowerWidget(  265): Button list: toggleWifi|toggleBluetooth|toggleGPS|toggleSound
+I/PowerWidget(  265): Setting up button: toggleWifi
+I/PowerWidget(  265): Setting up button: toggleBluetooth
+I/PowerWidget(  265): Setting up button: toggleGPS
+I/PowerWidget(  265): Setting up button: toggleSound
+D/VoldCmdListener(  135): share status ums
+D/StorageNotification(  265): Startup with UMS connection false (media state unmounted)
+I/StorageNotification(  265): UMS connection changed to true (media state unmounted)
+V/AudioManager(  265): shouldVibrate, group: a126d48a-aaef-47c4-baed-7f0e44aeffe5 mode: DEFAULT
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.freedesktop.DBus:NameAcquired from /org/freedesktop/DBus
+D/BluetoothHidService.cpp(  193): hid_event_filter...
+I//system/bin/tc(  136): RTNETLINK answers: No such file or directory
+I/logwrapper(  136): /system/bin/tc terminated by exit(2)
+I//system/bin/tc(  136): RTNETLINK answers: Invalid argument
+I/logwrapper(  136): /system/bin/tc terminated by exit(2)
+D/BluetoothService(  193): Bluetooth state 11 -> 12
+I//system/bin/tc(  136): Cannot find device "ifb0"
+I/logwrapper(  136): /system/bin/tc terminated by exit(1)
+W/SharedBufferStack(  207): waitForCondition(LockCondition) timed out (identity=1, status=0). CPU may be pegged. trying again.
+D/SntpClient(  193): request time failed: java.net.UnknownHostException: north-america.pool.ntp.org
+D/SntpClient(  193): request time failed: java.net.UnknownHostException: north-america.pool.ntp.org
+D/SettingsAppWidgetProvider(  277): Widget is from a previous version... Let's update
+D/SettingsAppWidgetProvider(  277): No instances yet... Wait for at least one instance to exist before adding global settings
+I/ActivityThread(  294): Pub mms: com.android.providers.telephony.MmsProvider
+I/ActivityThread(  310): Pub com.android.launcher.settings: com.android.launcher.LauncherProvider
+I/ActivityThread(  294): Pub sms: com.android.providers.telephony.SmsProvider
+I/ActivityThread(  294): Pub telephony: com.android.providers.telephony.TelephonyProvider
+I/ActivityThread(  294): Pub icc: com.android.phone.IccProvider
+I/ActivityThread(  294): Pub mms-sms: com.android.providers.telephony.MmsSmsProvider
+D/dalvikvm(  288): GC_EXTERNAL_ALLOC freed 88K, 49% free 2788K/5379K, external 0K/0K, paused 125ms
+D/dalvikvm(  288): GC_FOR_MALLOC freed 1K, 49% free 2788K/5379K, external 821K/1333K, paused 149ms
+I/dalvikvm-heap(  288): Grow heap (frag case) to 6.737MB for 841021-byte allocation
+D/dalvikvm(  288): GC_FOR_MALLOC freed 0K, 42% free 3609K/6215K, external 821K/1333K, paused 287ms
+D/dalvikvm(  265): GC_CONCURRENT freed 114K, 47% free 2967K/5575K, external 1K/512K, paused 8ms+40ms
+D/dalvikvm(  288): GC_CONCURRENT freed <1K, 42% free 3608K/6215K, external 821K/1333K, paused 4ms+4ms
+I/ActivityManager(  193): Start proc com.google.process.gapps for service com.google.android.location/.NetworkLocationService: pid=354 uid=10004 gids={3003, 1015, 2001, 1007}
+I/ActivityManager(  193): Start proc android.process.acore for content provider com.android.providers.userdictionary/.UserDictionaryProvider: pid=365 uid=10015 gids={3003, 1015}
+D/WifiStateTracker(  193): DHCP succeeded with lease: 86400
+D/dalvikvm(  310): GC_CONCURRENT freed 218K, 50% free 2835K/5575K, external 0K/0K, paused 6ms+46ms
+V/WifiStateTracker(  193): IP configuration: ipaddr 192.168.1.92 gateway 192.168.1.254 netmask 255.255.255.0 dns1 192.168.1.254 dns2 0.0.0.0 DHCP server 192.168.1.254 lease 86400 seconds
+I/ActivityThread(  354): Pub com.google.settings: com.google.android.gsf.settings.GoogleSettingsProvider
+I/TelephonyRegistry(  193): notifyMessageWaitingChanged: false
+D/CallManager(  294): registerPhone(CDMA Handler{4054e4f8})
+I/ActivityThread(  365): Pub com.android.social: com.android.providers.contacts.SocialProvider
+V/AudioManager(  265): shouldVibrate, group: a126d48a-aaef-47c4-baed-7f0e44aeffe5 mode: DEFAULT
+I/ActivityThread(  365): Pub applications: com.android.providers.applications.ApplicationsProvider
+D/BT HS/HF(  294): CDMA call state: IDLE prev state:IDLE
+D/WifiService(  193): ACTION_BATTERY_CHANGED pluggedType: 2
+D/WifiWatchdogService(  193): (android.server.ServerThread) borj3 (34:ef:44:db:13:49) does not require the watchdog
+W/ActivityManager(  193): Unable to start service Intent { act=com.android.ussd.IExtendedNetworkService }: not found
+D/AudioFlinger(  140): setParameters(): io 0, keyvalue bluetooth_enabled=true, tid 247, calling tid 193
+D/AudioFlinger(  140): setParameters(): io 0, keyvalue A2dpSuspended=false, tid 140, calling tid 193
+D/WifiService(  193): ACTION_BATTERY_CHANGED pluggedType: 2
+I/ActivityThread(  354): Pub com.google.android.gsf.gservices: com.google.android.gsf.gservices.GservicesProvider
+D/Tethering(  193): MasterInitialState.processMessage what=3
+D/WifiWatchdogService(  193): (android.server.ServerThread) borj3 (34:ef:44:db:13:49) does not require the watchdog
+I/GservicesProvider(  354): Gservices pushing to system: true; secure: true
+I/ActivityThread(  354): Pub subscribedfeeds: com.google.android.gsf.subscribedfeeds.SubscribedFeedsProvider
+I/pand    (  377): Bluetooth PAN daemon version 4.69
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+D/dalvikvm(  294): GC_CONCURRENT freed 168K, 48% free 2981K/5639K, external 0K/0K, paused 35ms+138ms
+I/TelephonyRegistry(  193): notifyServiceState: 3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EmergOnly: false
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+D/dalvikvm(  193): GC_CONCURRENT freed 472K, 38% free 4809K/7751K, external 0K/0K, paused 7ms+36ms
+I/TelephonyRegistry(  193): notifyDataConnection: state=0 isDataConnectivityPossible=false reason=radioTurnedOff interfaceName=null networkType=0
+D/BluetoothService(  193): Registering hfag record
+I/ActivityThread(  354): Pub com.google.android.providers.talk: com.google.android.gsf.talk.TalkProvider
+I/ActivityThread(  365): Pub contacts;com.android.contacts: com.android.providers.contacts.ContactsProvider2
+D/WifiService(  193): ACTION_SCREEN_ON
+I/ActivityManager(  193): Start proc com.cyanogenmod.cmparts for broadcast com.cyanogenmod.cmparts/.intents.LEDNotificationReceiver: pid=385 uid=1000 gids={1015, 3002, 3001, 3003}
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+D/BT HSHFP(  294): Starting BluetoothHeadsetService
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+I/bluetooth_ScoSocket.cpp(  294): Listening SCO socket...
+D/BluetoothService(  193): Registering hsag record
+D/NetworkLocationService(  354): onCreate
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+I/Database(  365): sqlite returned: error code = 0, msg = Recovered 107 frames from WAL file /data/data/com.android.providers.contacts/databases/contacts2.db-wal
+D/dalvikvm(  310): GC_EXTERNAL_ALLOC freed 75K, 48% free 2900K/5575K, external 0K/0K, paused 828ms
+D/dalvikvm(  193): GC_EXTERNAL_ALLOC freed 104K, 39% free 4787K/7751K, external 0K/0K, paused 398ms
+D/BluetoothService(  193): Registering opush record
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+I/TelephonyRegistry(  193): notifyServiceState: 1 home Searching for Service US 31000  Unknown CSS not supported 0 0RoamInd: 0DefRoamInd: 0EmergOnly: false
+D/szipinf (  385): Initializing inflate state
+D/HomeLoaders(  310): load applications
+D/HomeLoaders(  310): loading user items in Thread[main,5,main]
+D/HomeLoaders(  310):   --> starting workspace loader
+D/HomeLoaders(  310):   ----> running workspace loader (1)
+D/BluetoothService(  193): Registering pbap record
+I/Database(  310): sqlite returned: error code = 0, msg = Recovered 8 frames from WAL file /data/data/com.android.launcher/databases/launcher.db-wal
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+W/ProcessStats(  193): Skipping unknown process pid 405
+I/ActivityThread(  385): Pub com.cyanogenmod.cmparts.provider.Settings: com.cyanogenmod.cmparts.provider.SettingsProvider
+D/AlarmManagerService(  193): Kernel timezone updated to 240 minutes west of GMT
+D/SystemClock(  294): Setting time of day to sec=1319080794
+D/NetworkLocationService(  354): onBind com.google.android.location.NetworkLocationProvider
+D/LocationProviderProxy(  193): LocationProviderProxy.onServiceConnected ComponentInfo{com.google.android.location/com.google.android.location.NetworkLocationService}
+D/NetworkLocationService(  354): onBind com.google.android.location.GeocodeProvider
+D/GeocoderProxy(  193): onServiceConnected ComponentInfo{com.google.android.location/com.google.android.location.NetworkLocationService}
+D/AlarmManagerService(  193): Kernel timezone updated to 240 minutes west of GMT
+D/SettingsAppWidgetProvider(  277): Widget is from a previous version... Let's update
+I/TelephonyRegistry(  193): notifyServiceState: 0 home Roaming Indicator Off US 31000  1xRTT CSS not supported 22 4151RoamInd: 1DefRoamInd: 0EmergOnly: false
+D/SettingsAppWidgetProvider(  277): No instances yet... Wait for at least one instance to exist before adding global settings
+I/TelephonyRegistry(  193): notifyDataConnection: state=0 isDataConnectivityPossible=false reason=null interfaceName=null networkType=7
+I/TelephonyRegistry(  193): notifyDataConnection: state=1 isDataConnectivityPossible=true reason=null interfaceName=null networkType=7
+I/ActivityManager(  193): Start proc com.android.bluetooth for broadcast com.android.bluetooth/.opp.BluetoothOppReceiver: pid=410 uid=10054 gids={3003, 3002, 3001, 1015}
+D/dalvikvm(  354): GC_CONCURRENT freed 218K, 49% free 2855K/5575K, external 0K/0K, paused 6ms+173ms
+D/dalvikvm(  310): GC_EXTERNAL_ALLOC freed 117K, 48% free 2907K/5575K, external 124K/521K, paused 502ms
+D/szipinf (  310): Initializing inflate state
+D/WifiService(  193): acquireWifiLockLocked: WifiLock{NetworkLocationProvider type=2 binder=android.os.BinderProxy@4073fda8}
+D/dalvikvm(  139): GC_EXPLICIT freed 11K, 51% free 2673K/5379K, external 0K/0K, paused 410ms
+I/ActivityThread(  365): Pub call_log: com.android.providers.contacts.CallLogProvider
+I/ActivityThread(  365): Pub user_dictionary: com.android.providers.userdictionary.UserDictionaryProvider
+D/szipinf (  410): Initializing inflate state
+D/WifiService(  193): releaseWifiLockLocked: WifiLock{NetworkLocationProvider type=2 binder=android.os.BinderProxy@4073fda8}
+D/szipinf (  310): Initializing inflate state
+I/ActivityThread(  410): Pub com.android.bluetooth.opp: com.android.bluetooth.opp.BluetoothOppProvider
+D/dalvikvm(  365): GC_CONCURRENT freed 159K, 48% free 2949K/5575K, external 0K/0K, paused 6ms+17ms
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 51% free 2673K/5379K, external 0K/0K, paused 359ms
+D/szipinf (  310): Initializing inflate state
+I/Database(  365): sqlite returned: error code = 0, msg = Recovered 4 frames from WAL file /data/data/com.android.providers.userdictionary/databases/user_dict.db-wal
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 51% free 2673K/5379K, external 0K/0K, paused 211ms
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+D/PowerManagerService(  193): bootCompleted
+D/Tethering(  193): sendTetherStateChangedBroadcast 1, 0, 0
+D/Tethering(  193): interfaceAdded :usb0
+I/SurfaceFlinger(  193): Boot is finished (24737 ms)
+I/PowerWidget(  265): Clearing any old widget stuffs
+I/PowerWidget(  265): Setting up widget
+I/PowerWidget(  265): Default buttons being loaded
+I/PowerWidget(  265): Button list: toggleWifi|toggleBluetooth|toggleGPS|toggleSound
+I/PowerWidget(  265): Setting up button: toggleWifi
+I/PowerWidget(  265): Setting up button: toggleBluetooth
+D/VoldCmdListener(  135): volume mount /mnt/sdcard
+I/Vold    (  135): /dev/block/vold/179:1 being considered for volume sdcard
+D/Vold    (  135): Volume sdcard state changing 1 (Idle-Unmounted) -> 3 (Checking)
+D/BluetoothNetworkService(  193): updating tether state
+D/BluetoothNetworkService(  193): interface usb0
+I/SearchManagerService(  193): Building list of searchable activities
+W/logwrapper(  428): Unable to background process (No such file or directory)
+I/PowerWidget(  265): Setting up button: toggleGPS
+I/ActivityManager(  193): Start proc com.google.android.apps.uploader for broadcast com.google.android.apps.uploader/.ConnectivityBroadcastReceiver: pid=430 uid=10005 gids={3003}
+I/PowerWidget(  265): Setting up button: toggleSound
+I/Database(  410): sqlite returned: error code = 0, msg = Recovered 5 frames from WAL file /data/data/com.android.bluetooth/databases/btopp.db-wal
+I//system/bin/fsck_msdos(  135): ** /dev/block/vold/179:1
+I//system/bin/fsck_msdos(  135): ** Phase 1 - Read and Compare FATs
+I//system/bin/fsck_msdos(  135): Attempting to allocate 811 KB for FAT
+E/NetworkLocationProvider(  354): releaseCheckLocationLock: wake lock has already been released
+I/StorageNotification(  265): Media {/mnt/sdcard} state changed from {unmounted} -> {checking}
+D/szipinf (  365): Initializing inflate state
+I/ActivityThread(  430): Pub com.google.android.apps.uploader: com.google.android.apps.uploader.UploadsContentProvider
+I/ActivityThread(  430): Pub com.google.photos.provider.Album: com.google.android.apps.uploader.clients.picasa.AlbumProvider
+D/szipinf (  310): Initializing inflate state
+D/MediaUploader(  430): UploaderApplication.onCreate
+I//system/bin/fsck_msdos(  135): Attempting to allocate 811 KB for FAT
+D/szipinf (  310): Initializing inflate state
+D/MediaUploader(  430): nonWifiLimit=20971520, default=20971520
+I/MediaUploader(  430): No need to wake up
+D/szipinf (  193): Initializing inflate state
+I/ActivityManager(  193): Start proc android.process.media for broadcast com.android.providers.downloads/.DownloadReceiver: pid=441 uid=10029 gids={1015, 2001, 3003}
+D/HomeLoaders(  310):   ----> workspace loader 1 finished loading data
+D/HomeLoaders(  310):   ----> worskpace items=11
+D/HomeLoaders(  310):   ----> worskpace widgets=3
+D/HomeLoaders(  310):   --> done loading workspace; not stopped
+D/HomeLoaders(  310):   ----> items cloned, ready to refresh UI
+D/HomeLoaders(  310):   ----> onDesktopItemsLoaded()
+D/Launcher(  310): ------> binding 11 items
+D/Launcher(  310): ------> binding 3 widgets
+D/Launcher(  310): ------> start binding items
+D/HomeLoaders(  310):   ----> loading applications from workspace loader
+D/HomeLoaders(  310):   --> starting applications loader unlocked
+D/HomeLoaders(  310):   --> starting applications loader
+D/HomeLoaders(  310):   ----> running applications loader (1)
+I//system/bin/fsck_msdos(  135): ** Phase 2 - Check Cluster Chains
+D/szipinf (  441): Initializing inflate state
+I/ActivityThread(  441): Pub media: com.android.providers.media.MediaProvider
+D/szipinf (  310): Initializing inflate state
+D/HomeLoaders(  310):   ----> cleared application list
+V/MediaProvider(  441): Attached volume: internal
+I//system/bin/fsck_msdos(  135): ** Phase 3 - Checking Directories
+I/ActivityThread(  441): Pub downloads: com.android.providers.downloads.DownloadProvider
+D/dalvikvm(  310): GC_CONCURRENT freed 297K, 49% free 3023K/5831K, external 774K/1151K, paused 7ms+68ms
+I//system/bin/fsck_msdos(  135): ** Phase 4 - Checking for Lost Files
+I//system/bin/fsck_msdos(  135): Next free cluster in FSInfo block (437) not free
+I//system/bin/fsck_msdos(  135): FIXED
+I//system/bin/fsck_msdos(  135): 284 files, 388916 free (97229 clusters)
+I/Vold    (  135): Filesystem check completed OK
+I/Vold    (  135): Filesystem type is: VFAT
+I/Vold    (  135): Device /dev/block/vold/179:1, target /mnt/sdcard mounted @ /mnt/secure/staging
+D/Vold    (  135): Volume sdcard state changing 3 (Checking) -> 4 (Mounted)
+I/ActivityThread(  441): Pub drm: com.android.providers.drm.DrmProvider
+I/PackageManager(  193): Updating external media status from unmounted to mounted
+I/StorageNotification(  265): Media {/mnt/sdcard} state changed from {checking} -> {mounted}
+D/szipinf (  193): Initializing inflate state
+D/VoldCmdListener(  135): asec list
+I/PackageManager(  193): No secure containers on sdcard
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Unknown permission com.android.vending.permission.UPDATE_MARKET_FAILURE in package com.android.vending.updater
+W/PackageManager(  193): Unknown permission android.permission.ADD_SYSTEM_SERVICE in package com.android.phone
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Unknown permission android.permission.READ_EXTERNAL_STORAGE in package com.cyanogenmod.cmparts
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+D/szipinf (  310): Initializing inflate state
+I/dalvikvm(  193): Jit: resizing JitTable from 512 to 1024
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.google.android.talk
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Unknown permission android.permission.READ_OWNER_DATA in package com.android.setupwizard
+W/PackageManager(  193): Unknown permission android.permission.WRITE_OWNER_DATA in package com.android.setupwizard
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.google.android.apps.uploader
+W/PackageManager(  193): Unknown permission com.google.android.voicesearch.SHORTCUTS_ACCESS in package com.google.android.googlequicksearchbox
+D/szipinf (  310): Initializing inflate state
+W/PackageManager(  193): Unknown permission android.permission.READ_EXTERNAL_STORAGE in package com.android.vending
+W/PackageManager(  193): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.vending (protectionLevel=2 flags=0x2be45)
+W/PackageManager(  193): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  193): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  193): GC_CONCURRENT freed 399K, 38% free 4910K/7815K, external 600K/1112K, paused 9ms+13ms
+D/szipinf (  365): Initializing inflate state
+D/szipinf (  365): Initializing inflate state
+I/ActivityManager(  193): Start proc com.cyanogenmod.stats for broadcast com.cyanogenmod.stats/.ReportingServiceManager: pid=459 uid=10051 gids={3003}
+D/szipinf (  365): Initializing inflate state
+I/TelephonyRegistry(  193): notifyServiceState: 0 home Roaming Indicator Off US 31000  EvDo rev. A CSS not supported 22 4151RoamInd: 1DefRoamInd: 0EmergOnly: false
+I/TelephonyRegistry(  193): notifyDataConnection: state=1 isDataConnectivityPossible=true reason=null interfaceName=null networkType=6
+D/szipinf (  193): Initializing inflate state
+D/CMStats (  459): CONNECTIVITY_ACTION: noConnectivity = false
+D/CMStats (  459): CONNECTIVITY_ACTION: starting service
+I/ActivityManager(  193): Start proc com.google.android.partnersetup for broadcast com.google.android.partnersetup/.PhoneStateReceiver: pid=469 uid=10009 gids={}
+D/CMStats (  459): Prompting user for opt-in.
+I/Database(  441): sqlite returned: error code = 0, msg = Recovered 8 frames from WAL file /data/data/com.android.providers.downloads/databases/downloads.db-wal
+I/TelephonyRegistry(  193): notifyDataConnection: state=2 isDataConnectivityPossible=true reason=null interfaceName=ppp0 networkType=6
+D/MobileDataStateTracker(  193): CONNECTED event did not supply a default gateway.
+V/SipBroadcastReceiver(  294): start auto registration
+D/dalvikvm(  310): GC_CONCURRENT freed 515K, 50% free 3037K/6023K, external 711K/1151K, paused 5ms+121ms
+I/ActivityManager(  193): Start proc com.android.deskclock for broadcast com.android.deskclock/.AlarmInitReceiver: pid=480 uid=10040 gids={}
+I/ActivityManager(  193): Displayed com.android.launcher/.Launcher: +16s525ms
+D/szipinf (  480): Initializing inflate state
+I/ActivityThread(  480): Pub com.android.deskclock: com.android.deskclock.AlarmProvider
+I/Database(  480): sqlite returned: error code = 0, msg = Recovered 4 frames from WAL file /data/data/com.android.deskclock/databases/alarms.db-wal
+D/szipinf (  310): Initializing inflate state
+D/szipinf (  365): Initializing inflate state
+I/TelephonyRegistry(  193): notifyDataConnection: state=0 isDataConnectivityPossible=true reason=dataDisabled interfaceName=ppp0 networkType=6
+D/NetUtils(  193): failed to remove default route for ppp0: No such device
+V/OtaStartupReceiver(  294): resolvInfo = null, provisioned = true, runningSetupWizard = true
+I/ActivityManager(  193): Start proc com.bel.android.dspmanager for broadcast com.bel.android.dspmanager/.ServiceLaunchReceiver: pid=491 uid=10042 gids={3002}
+D/Tethering(  193): MasterInitialState.processMessage what=3
+D/Tethering(  193): MasterInitialState.processMessage what=3
+D/szipinf (  365): Initializing inflate state
+D/AlarmManagerService(  193): Kernel timezone updated to 240 minutes west of GMT
+D/dalvikvm(  265): GC_CONCURRENT freed 246K, 48% free 3122K/5895K, external 5K/512K, paused 6ms+29ms
+I/HeadsetService(  491): Starting service.
+I/ActivityManager(  193): Start proc com.android.vending for broadcast com.android.vending/com.google.android.finsky.billing.iab.BootCompletedReceiver: pid=502 uid=10000 gids={3003, 1015}
+I/RecoverySystem(  193): No recovery log file
+I/Effect-Equalizer(  140): EQ_PARAM_NUM_BANDS OK
+I/HeadsetService(  491): Phone status idle: enable DSP.
+I/Effect-BassBoost(  140): New strength: 0
+I/Effect-Equalizer(  140): Setting band 2 to 0
+I/Effect-Equalizer(  140): Setting band 2 to 1
+I/Effect-Equalizer(  140): Setting band 2 to 2
+I/Effect-Equalizer(  140): Setting band 2 to 3
+I/Effect-Equalizer(  140): Setting band 2 to 4
+I/Effect-Equalizer(  140): Setting loudness correction reference to 100.000000 dB
+D/szipinf (  193): Initializing inflate state
+I/ActivityThread(  502): Pub com.google.android.finsky.RecentSuggestionsProvider: com.google.android.finsky.providers.RecentSuggestionsProvider
+E/RPC     (  193): error opening /dev/oncrpc/3000008c:00040000: No such file or directory
+E/RPC     (  193): ERROR OPENING [3000008c:00040000]: No such file or directory
+E/RPC     (  193): failed to initialize client (permissions?)!
+D/GpsLocationProvider(  193): set_capabilities_callback: 7
+D/libloc  (  193): loc_read_gps_conf: using /etc/gps.conf
+D/libloc  (  193): loc_eng_init created client, id = -1234
+D/libloc  (  193): loc_eng_ni_init: entered.
+D/libloc  (  193): loc_eng_deferred_action_thread started
+D/libloc  (  193): loc_eng_set_gps_lock mode, client = -1234, lock_type = 1
+D/libloc  (  193): loc_eng_ioctl called: client = -1234, ioctl_type = RPC_LOC_IOCTL_SET_ENGINE_LOCK
+E/loc_api_rpc_glue(  193): loc_select_callback: buffer full for this synchronous Loc API call, mask: 0x0
+D/libloc  (  193): loc_eng_ioctl result: client = -1234, ioctl_type = RPC_LOC_IOCTL_SET_ENGINE_LOCK, RPC_LOC_API_ENGINE_BUSY
+D/libloc  (  193): loc_eng_deferred_action_thread. waiting for events
+D/libloc  (  193): loc_eng_set_server, type = 1, hostname = supl.google.com, port = 7276
+D/libloc  (  193): loc_eng_set_server, addr = supl.google.com:7276
+D/libloc  (  193): loc_eng_ioctl called: client = -1234, ioctl_type = RPC_LOC_IOCTL_SET_UMTS_SLP_SERVER_ADDR
+E/loc_api_rpc_glue(  193): loc_select_callback: buffer full for this synchronous Loc API call, mask: 0x0
+D/libloc  (  193): loc_eng_ioctl result: client = -1234, ioctl_type = RPC_LOC_IOCTL_SET_UMTS_SLP_SERVER_ADDR, RPC_LOC_API_ENGINE_BUSY
+E/libloc  (  193): loc_eng_set_server failed
+D/szipinf (  365): Initializing inflate state
+D/Finsky  (  502): [1] SanityChecker.run: # LocalAssets corrected : 0
+D/Finsky  (  502): Sanity check took : 6 ms
+D/Volley  (  502): [11] DiskBasedCache.clear: Cache cleared.
+D/Volley  (  502): [15] DiskBasedCache.clear: Cache cleared.
+D/dalvikvm(  502): GC_CONCURRENT freed 230K, 48% free 2933K/5639K, external 0K/0K, paused 7ms+6ms
+D/Finsky  (  502): [23] DownloadRecords.initializeAndPrune: Pruned 0 old downloads from the cursor.
+V/update.Download(  354): deleting all update downloads
+D/GpsLocationProvider(  193): NTP server returned: 1319080804990 (Wed Oct 19 23:20:04 EDT 2011) reference: 47771 certainty: 42 system time offset: 106
+I/ActivityManager(  193): Starting: Intent { flg=0x10000000 cmp=com.google.android.gsf/.update.SystemUpdateInstallDialog } from pid 354
+D/libloc  (  193): loc_eng_inject_time, uncertainty = 42
+D/libloc  (  193): loc_eng_ioctl called: client = -1234, ioctl_type = RPC_LOC_IOCTL_INJECT_UTC_TIME
+E/loc_api_rpc_glue(  193): loc_select_callback: buffer full for this synchronous Loc API call, mask: 0x0
+D/libloc  (  193): loc_eng_ioctl result: client = -1234, ioctl_type = RPC_LOC_IOCTL_INJECT_UTC_TIME, RPC_LOC_API_ENGINE_BUSY
+E/libloc  (  193): loc_eng_inject_time failed
+I/ActivityManager(  193): Start proc com.android.voicedialer for broadcast com.android.voicedialer/.VoiceDialerReceiver: pid=532 uid=10013 gids={3002}
+I/BtOppRfcommListener(  410): Accept thread started on channel 12
+W/InputManagerService(  193): Window already focused, ignoring focus gain of: com.android.internal.view.IInputMethodClient$Stub$Proxy@407c7588
+D/szipinf (  365): Initializing inflate state
+D/VoiceDialerReceiver(  532): onReceive Intent { act=android.intent.action.BOOT_COMPLETED cmp=com.android.voicedialer/.VoiceDialerReceiver }
+V/RecognizerEngine(  532): deleteCachedGrammarFiles /data/data/com.android.voicedialer/files/openentries.txt
+I/ActivityManager(  193): Start proc com.koushikdutta.rommanager for broadcast com.koushikdutta.rommanager/.UpdateReceiver: pid=543 uid=10020 gids={1015, 3003}
+I/ActivityManager(  193): Start proc com.android.mms for broadcast com.android.mms/.transaction.MmsSystemEventReceiver: pid=551 uid=10028 gids={3003, 1015}
+W/System.err(  543): java.io.FileNotFoundException: /sdcard/clockworkmod/.settings2 (No such file or directory)
+D/szipinf (  551): Initializing inflate state
+W/System.err(  543): 	at org.apache.harmony.luni.platform.OSFileSystem.open(Native Method)
+W/System.err(  543): 	at dalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)
+W/System.err(  543): 	at java.io.FileOutputStream.<init>(FileOutputStream.java:94)
+W/System.err(  543): 	at java.io.FileOutputStream.<init>(FileOutputStream.java:165)
+W/System.err(  543): 	at java.io.FileOutputStream.<init>(FileOutputStream.java:144)
+W/System.err(  543): 	at com.koushikdutta.rommanager.gd.a(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.DownloadService.onCreate(Unknown Source)
+W/System.err(  543): 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2066)
+W/System.err(  543): 	at android.app.ActivityThread.access$2500(ActivityThread.java:123)
+W/System.err(  543): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:993)
+W/System.err(  543): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+W/System.err(  543): 	at android.os.Looper.loop(Looper.java:130)
+W/System.err(  543): 	at android.app.ActivityThread.main(ActivityThread.java:3835)
+W/System.err(  543): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  543): 	at java.lang.reflect.Method.invoke(Method.java:507)
+W/System.err(  543): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:847)
+W/System.err(  543): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:605)
+W/System.err(  543): 	at dalvik.system.NativeStart.main(Native Method)
+W/System.err(  543): java.io.FileNotFoundException: /sdcard/clockworkmod/.rommanager_inapp_license (No such file or directory)
+W/System.err(  543): 	at org.apache.harmony.luni.platform.OSFileSystem.open(Native Method)
+W/System.err(  543): 	at dalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)
+W/System.err(  543): 	at java.io.FileInputStream.<init>(FileInputStream.java:80)
+W/System.err(  543): 	at com.koushikdutta.rommanager.bc.a(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.bc.a(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.gd.k(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.gd.c(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.gd.a(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.DownloadService.b(Unknown Source)
+W/System.err(  543): 	at com.koushikdutta.rommanager.DownloadService.onStart(Unknown Source)
+W/System.err(  543): 	at android.app.Service.onStartCommand(Service.java:428)
+W/System.err(  543): 	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:2160)
+W/System.err(  543): 	at android.app.ActivityThread.access$2800(ActivityThread.java:123)
+W/System.err(  543): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1002)
+W/System.err(  543): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+W/System.err(  543): 	at android.os.Looper.loop(Looper.java:130)
+W/System.err(  543): 	at android.app.ActivityThread.main(ActivityThread.java:3835)
+W/System.err(  543): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  543): 	at java.lang.reflect.Method.invoke(Method.java:507)
+W/System.err(  543): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:847)
+W/System.err(  543): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:605)
+W/System.err(  543): 	at dalvik.system.NativeStart.main(Native Method)
+W/Finsky  (  502): [8] MarketBillingService.getPreferredAccount: com.koushikdutta.rommanager: No account found.
+D/Finsky  (  502): [8] MarketBillingService.sendResponseCode: Sending response RESULT_BILLING_UNAVAILABLE for request 5603642902474220096 to com.koushikdutta.rommanager.
+E/ActivityThread(  543): Service com.koushikdutta.rommanager.DownloadService has leaked IntentReceiver com.koushikdutta.rommanager.o@4053a330 that was originally registered here. Are you missing a call to unregisterReceiver()?
+E/ActivityThread(  543): android.app.IntentReceiverLeaked: Service com.koushikdutta.rommanager.DownloadService has leaked IntentReceiver com.koushikdutta.rommanager.o@4053a330 that was originally registered here. Are you missing a call to unregisterReceiver()?
+E/ActivityThread(  543): 	at android.app.LoadedApk$ReceiverDispatcher.<init>(LoadedApk.java:756)
+E/ActivityThread(  543): 	at android.app.LoadedApk.getReceiverDispatcher(LoadedApk.java:551)
+E/ActivityThread(  543): 	at android.app.ContextImpl.registerReceiverInternal(ContextImpl.java:823)
+E/ActivityThread(  543): 	at android.app.ContextImpl.registerReceiver(ContextImpl.java:810)
+E/ActivityThread(  543): 	at android.app.ContextImpl.registerReceiver(ContextImpl.java:804)
+E/ActivityThread(  543): 	at android.content.ContextWrapper.registerReceiver(ContextWrapper.java:318)
+E/ActivityThread(  543): 	at com.koushikdutta.rommanager.au.onServiceConnected(Unknown Source)
+E/ActivityThread(  543): 	at android.app.LoadedApk$ServiceDispatcher.doConnected(LoadedApk.java:1064)
+E/ActivityThread(  543): 	at android.app.LoadedApk$ServiceDispatcher$RunConnection.run(LoadedApk.java:1081)
+E/ActivityThread(  543): 	at android.os.Handler.handleCallback(Handler.java:587)
+E/ActivityThread(  543): 	at android.os.Handler.dispatchMessage(Handler.java:92)
+E/ActivityThread(  543): 	at android.os.Looper.loop(Looper.java:130)
+E/ActivityThread(  543): 	at android.app.ActivityThread.main(ActivityThread.java:3835)
+E/ActivityThread(  543): 	at java.lang.reflect.Method.invokeNative(Native Method)
+E/ActivityThread(  543): 	at java.lang.reflect.Method.invoke(Method.java:507)
+E/ActivityThread(  543): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:847)
+E/ActivityThread(  543): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:605)
+E/ActivityThread(  543): 	at dalvik.system.NativeStart.main(Native Method)
+D/szipinf (  365): Initializing inflate state
+I/ActivityThread(  551): Pub com.android.mms.SuggestionsProvider: com.android.mms.SuggestionsProvider
+I/Database(  294): sqlite returned: error code = 0, msg = Recovered 37 frames from WAL file /data/data/com.android.providers.telephony/databases/mmssms.db-wal
+D/dalvikvm(  193): GC_CONCURRENT freed 567K, 38% free 5021K/8071K, external 600K/1112K, paused 21ms+21ms
+I/ActivityManager(  193): Start proc com.android.email for broadcast com.android.email/.service.EmailBroadcastReceiver: pid=570 uid=10038 gids={3003, 1015}
+D/MediaScannerService(  441): start scanning volume internal
+D/libloc  (  193): loc_eng_deferred_action_thread signalled
+D/libloc  (  193): qct_loc_eng_inject_xtra_data, xtra size = 39701, data ptr = 0x2bfa50
+D/libloc  (  193): qct_loc_eng_inject_xtra_data, part 1/39, len = 1024, total = 0
+E/libloc  (  193): loc_ioctl for xtra error: UNKNOWN
+D/libloc  (  193): qct_loc_eng_inject_xtra_data, xtra size = 39701, data ptr = 0x2bfa50
+D/libloc  (  193): qct_loc_eng_inject_xtra_data, part 1/39, len = 1024, total = 0
+E/libloc  (  193): loc_ioctl for xtra error: UNKNOWN
+D/libloc  (  193): qct_loc_eng_inject_xtra_data, xtra size = 39701, data ptr = 0x2bfa50
+D/libloc  (  193): qct_loc_eng_inject_xtra_data, part 1/39, len = 1024, total = 0
+E/libloc  (  193): loc_ioctl for xtra error: UNKNOWN
+E/libloc  (  193): XTRA injection failed.
+D/libloc  (  193): loc_eng_deferred_action_thread. waiting for events
+D/dalvikvm(  139): GC_EXPLICIT freed 11K, 51% free 2673K/5379K, external 0K/0K, paused 194ms
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 51% free 2673K/5379K, external 0K/0K, paused 144ms
+D/szipinf (  570): Initializing inflate state
+D/dalvikvm(  139): GC_EXPLICIT freed <1K, 51% free 2673K/5379K, external 0K/0K, paused 144ms
+I/ActivityThread(  570): Pub com.android.email.provider: com.android.email.provider.EmailProvider
+I/ActivityThread(  570): Pub com.android.email.attachmentprovider: com.android.email.provider.AttachmentProvider
+I/ActivityThread(  570): Pub com.android.exchange.provider: com.android.exchange.provider.ExchangeProvider
+I/Database(  441): sqlite returned: error code = 0, msg = Recovered 92 frames from WAL file /data/data/com.android.providers.media/databases/internal.db-wal
+D/EAS SyncManager(  570): !!! EAS SyncManager, onCreate
+D/EAS SyncManager(  570): !!! EAS SyncManager, onStartCommand
+I/Database(  570): sqlite returned: error code = 0, msg = Recovered 28 frames from WAL file /data/data/com.android.email/databases/EmailProvider.db-wal
+I/ActivityManager(  193): Start proc com.android.providers.calendar for broadcast com.android.providers.calendar/.CalendarReceiver: pid=585 uid=10046 gids={3003}
+D/Email   (  570): BOOT_COMPLETED
+I/Database(  570): sqlite returned: error code = 0, msg = Recovered 6 frames from WAL file /data/data/com.android.email/databases/EmailProviderBody.db-wal
+D/EAS SyncManager(  570): !!! EAS SyncManager, stopping self
+I/ActivityThread(  585): Pub com.android.calendar: com.android.providers.calendar.CalendarProvider2
+D/Eas Debug(  570): Logging: 
+D/EAS SyncManager(  570): !!! EAS SyncManager, onDestroy
+D/EAS SyncManager(  570): !!! EAS SyncManager, onCreate
+D/EAS SyncManager(  570): !!! EAS SyncManager, onStartCommand
+D/EAS SyncManager(  570): !!! EAS SyncManager, stopping self
+D/EAS SyncManager(  570): !!! EAS SyncManager, onStartCommand
+D/EAS SyncManager(  570): !!! EAS SyncManager, stopping self
+D/EAS SyncManager(  570): !!! EAS SyncManager, onDestroy
+D/szipinf (  365): Initializing inflate state
+I/Database(  585): sqlite returned: error code = 0, msg = Recovered 34 frames from WAL file /data/data/com.android.providers.calendar/databases/calendar.db-wal
+D/CMStats (  459): BOOT_COMPLETED: Setting checkedin=false
+I/ActivityManager(  193): Start proc com.google.android.googlequicksearchbox for broadcast com.google.android.googlequicksearchbox/.SearchWidgetProvider: pid=599 uid=10008 gids={3003}
+D/szipinf (  365): Initializing inflate state
+I/ActivityThread(  599): Pub com.google.android.googlequicksearchbox.shortcuts: com.google.android.googlequicksearchbox.ShortcutsProvider
+I/ActivityThread(  599): Pub com.google.android.googlequicksearchbox.google: com.google.android.googlequicksearchbox.google.GoogleSuggestionProvider
+D/szipinf (  365): Initializing inflate state
+D/Calendar(  585): missed alarms found: 0
+I/ActivityManager(  193): Start proc com.android.protips for broadcast com.android.protips/.ProtipWidget: pid=610 uid=10023 gids={}
+D/szipinf (  365): Initializing inflate state
+D/dalvikvm(  310): GC_CONCURRENT freed 277K, 48% free 3166K/6023K, external 823K/1151K, paused 7ms+28ms
+I/pixelflinger(  193): Needs: n=0x03515102 p=0x00000077 t0=0x00000000 t1=0x00000000
+I/ARMAssembler(  193): generated scanline__00000077:03515102_00000000_00000000 [ 34 ipp] (48 ins) at [0x493ec1e8:0x493ec2a8] in 305000 ns
+I/dalvikvm(  193): Jit: resizing JitTable from 1024 to 2048
+D/szipinf (  365): Initializing inflate state
+I/ActivityManager(  193): Start proc com.android.music for broadcast com.android.music/.MediaAppWidgetProvider4x2: pid=619 uid=10027 gids={3003, 1015}
+D/MediaScanner(  441):  prescan time: 2863ms
+D/ShutdownThread(  193): Notifying thread to start radio shutdown
+D/MediaScanner(  441):     scan time: 710ms
+D/MediaScanner(  441): postscan time: 1ms
+D/MediaScanner(  441):    total time: 3574ms
+D/MediaScannerService(  441): done scanning volume internal
+D/szipinf (  619): Initializing inflate state
+I/MediaUploader(  430): No need to wake up
+I/ShutdownThread(  193): Sending shutdown broadcast...
+I/ActivityManager(  193): Start proc com.cooliris.media for broadcast com.cooliris.media/com.cooliris.cache.BootReceiver: pid=629 uid=10035 gids={1015, 3003}
+D/MediaScannerService(  441): start scanning volume external
+V/MediaProvider(  441): /mnt/sdcard volume ID: 1953441834
+D/szipinf (  629): Initializing inflate state
+I/ActivityThread(  629): Pub com.cooliris.picasa.contentprovider: com.cooliris.picasa.PicasaContentProvider
+I/Database(  629): sqlite returned: error code = 0, msg = Recovered 10 frames from WAL file /data/data/com.cooliris.media/databases/picasa.db-wal
+I/BootReceiver(  629): Got intent with action android.intent.action.MEDIA_MOUNTED
+I/CPUSettings(  385): Restore disabled by user preference.
+D/SettingsAppWidgetProvider(  277): Widget is from a previous version... Let's update
+D/SettingsAppWidgetProvider(  277): No instances yet... Wait for at least one instance to exist before adding global settings
+V/MediaProvider(  441): Attached volume: external
+I/MediaUploader(  430): No need to wake up
+D/MediaScanner(  441): found .nomedia, skipping directory
+D/CMStats (  459): CONNECTIVITY_ACTION: noConnectivity = false
+D/CMStats (  459): CONNECTIVITY_ACTION: starting service
+I/MediaUploader(  430): No need to wake up
+D/CMStats (  459): CONNECTIVITY_ACTION: noConnectivity = false
+D/CMStats (  459): CONNECTIVITY_ACTION: starting service
+I/BillingReceiver(  543): 3
+D/dalvikvm(  193): GC_CONCURRENT freed 574K, 38% free 5136K/8199K, external 600K/1112K, paused 7ms+32ms
+I/BootReceiver(  629): Got intent with action android.intent.action.MEDIA_SCANNER_FINISHED
+W/SyncManager(  193): Writing sync state before shutdown...
+D/CMStats (  459): ACTION_SHUTDOWN: Setting checkedin=false
+I/ShutdownThread(  193): Shutting down activity manager...
+I/UsageStats(  193): Writing usage stats before shutdown...
+D/dalvikvm(  354): GC_CONCURRENT freed 262K, 48% free 3063K/5831K, external 0K/0K, paused 6ms+57ms
+W/BatteryStats(  193): Writing battery stats before shutdown...
+D/MediaScanner(  441): found .nomedia, skipping directory
+W/ShutdownThread(  193): Disabling Bluetooth...
+D/BluetoothService(  193): Bluetooth state 12 -> 13
+D/AudioFlinger(  140): setParameters(): io 0, keyvalue bluetooth_enabled=false, tid 140, calling tid 193
+V/BluetoothEventRedirector(  277): Received android.bluetooth.adapter.action.STATE_CHANGED
+D/ScoSocket(  294): android.bluetooth.ScoSocket@4051be08 SCO OBJECT close() mState = 2
+D/PanController(  136): Stopping PAN services
+E/pand    (  377): Accept failed. Interrupted system call(4)
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+D/PanController(  136): PAN services stopped
+I/BtOppRfcommListener(  410): stopping Accept Thread
+E/BtOppRfcommListener(  410): Error accept connection java.io.IOException: Operation Canceled
+I/BtOppRfcommListener(  410): BluetoothSocket listen thread finished
+W/ShutdownThread(  193): Turning off radio...
+I/TelephonyRegistry(  193): notifyDataConnection: state=0 isDataConnectivityPossible=true reason=radioTurnedOff interfaceName=null networkType=6
+I/ShutdownThread(  193): Waiting for Bluetooth and Radio...
+D/SettingsAppWidgetProvider(  277): Widget is from a previous version... Let's update
+D/SettingsAppWidgetProvider(  277): No instances yet... Wait for at least one instance to exist before adding global settings
+I/TelephonyRegistry(  193): notifyServiceState: 3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EmergOnly: false
+E/BluetoothEventLoop.cpp(  193): event_filter: Received signal org.bluez.Adapter:PropertyChanged from /org/bluez/286/hci0
+I/TelephonyRegistry(  193): notifyDataConnection: state=0 isDataConnectivityPossible=false reason=radioTurnedOff interfaceName=null networkType=0
+D/MediaScanner(  441): found .nomedia, skipping directory
+D/MediaScanner(  441):  prescan time: 194ms
+D/MediaScanner(  441):     scan time: 1026ms
+D/MediaScanner(  441): postscan time: 1ms
+D/MediaScanner(  441):    total time: 1221ms
+I/BootReceiver(  629): Got intent with action android.intent.action.MEDIA_SCANNER_FINISHED
+D/MediaScannerService(  441): done scanning volume external
+I/CacheService(  629): Starting CacheService
+I/ActivityManager(  193): No longer want android.process.acore (pid 365): hidden #16
+I/CacheService(  629): Preparing DiskCache for all thumbnails.
+D/dalvikvm(  629): GC_CONCURRENT freed 358K, 52% free 2759K/5639K, external 0K/0K, paused 8ms+5ms
+I/CacheService(  629): DiskCache ready for all thumbnails.
+D/dalvikvm(  441): GC_CONCURRENT freed 278K, 50% free 2833K/5575K, external 0K/0K, paused 6ms+8ms
+I/bluedroid(  193): Stopping bluetoothd deamon
+I/bluedroid(  193): Stopping hciattach deamon
+D/BluetoothService(  193): Bluetooth state 13 -> 10
+I/ShutdownThread(  193): Radio and Bluetooth shutdown complete.
+I/ShutdownThread(  193): Shutting down MountService
+I/PackageManager(  193): Updating external media status from mounted to unmounted
+V/BluetoothEventRedirector(  277): Received android.bluetooth.adapter.action.STATE_CHANGED
+I/MountService(  193): Shutting down
+D/VoldCmdListener(  135): asec list
+D/SettingsAppWidgetProvider(  277): Widget is from a previous version... Let's update
+D/SettingsAppWidgetProvider(  277): No instances yet... Wait for at least one instance to exist before adding global settings
+I/PackageManager(  193): No secure containers on sdcard
+I/ActivityManager(  193): No longer want com.android.voicedialer (pid 532): hidden #16
+D/VoldCmdListener(  135): storage users /mnt/sdcard
+W/ActivityManager(  193): Killing processes unmount media at adjustment 7
+W/ActivityManager(  193): Killing ProcessRecord{407ec868 629:com.cooliris.media/10035} (adj 8): unmount media
+D/VoldCmdListener(  135): storage users /mnt/sdcard
+D/dalvikvm(  193): GC_EXPLICIT freed 378K, 38% free 5089K/8199K, external 600K/1112K, paused 115ms
+I/PackageManager(  193): Updating external media status from unmounted to unmounted
+D/VoldCmdListener(  135): volume unmount /mnt/sdcard force
+D/Vold    (  135): Volume sdcard state changing 4 (Mounted) -> 5 (Unmounting)
+I/ActivityManager(  193): Start proc com.cooliris.media for broadcast com.cooliris.media/com.cooliris.cache.BootReceiver: pid=648 uid=10035 gids={1015, 3003}
+V/MediaProvider(  441): Detached volume: external
+D/szipinf (  648): Initializing inflate state
+I/ActivityThread(  648): Pub com.cooliris.picasa.contentprovider: com.cooliris.picasa.PicasaContentProvider
+I/Database(  648): sqlite returned: error code = 0, msg = Recovered 10 frames from WAL file /data/data/com.cooliris.media/databases/picasa.db-wal
+I/BootReceiver(  648): Got intent with action android.intent.action.MEDIA_EJECT
+D/dalvikvm(  648): GC_CONCURRENT freed 361K, 52% free 2754K/5639K, external 0K/0K, paused 27ms+5ms
+I/Vold    (  135): /mnt/secure/staging/.android_secure sucessfully unmounted
+I/Vold    (  135): /mnt/secure/asec sucessfully unmounted
+I/Vold    (  135): /mnt/secure/staging sucessfully unmounted
+I/Vold    (  135): /mnt/sdcard unmounted sucessfully
+I/PackageManager(  193): Updating external media status from unmounted to unmounted
+D/Vold    (  135): Volume sdcard state changing 5 (Unmounting) -> 1 (Idle-Unmounted)
+I/StorageNotification(  265): Media {/mnt/sdcard} state changed from {mounted} -> {unmounted}
+W/ShutdownThread(  193): Result code 0 from MountService.shutdown
+D/VoldCmdListener(  135): volume shared /mnt/sdcard ums
+I/ShutdownThread(  193): Performing low-level shutdown...
