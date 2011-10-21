@@ -10,8 +10,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVidEnc \
-    brcm_patchram_plus \
-    abtfilt \
     gps.prevail \
     gralloc.prevail \
     copybit.prevail \
@@ -137,12 +135,12 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/bin/BCM4329B1_002.002.023.0746.0827.hcd:system/bin/BCM4329B1_002.002.023.0746.0827.hcd \
-    vendor/samsung/prevail/proprietary/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
-    vendor/samsung/prevail/proprietary/etc/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
-    vendor/samsung/prevail/proprietary/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
-    vendor/samsung/prevail/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
-    vendor/samsung/prevail/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf 
+    vendor/samsung/prevail/proprietary/bin/BCM4329B1_002.002.023.0746.0827.hcd:system/bin/BCM4329B1_002.002.023.0746.0827.hcd
+#    vendor/samsung/prevail/proprietary/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
+#    vendor/samsung/prevail/proprietary/etc/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
+#    vendor/samsung/prevail/proprietary/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
+#    vendor/samsung/prevail/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
+#    vendor/samsung/prevail/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf 
 
 
 
@@ -204,7 +202,7 @@ PRODUCT_COPY_FILES += \
     vendor/cyanogen/prebuilt/ldpi/media/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.modversion=CyanogenMod-7.1.0-RC1-HROARK
+    ro.modversion=CyanogenMod-7.1.0-HROARK
 
 PRODUCT_NAME := full_prevail
 PRODUCT_BRAND := samsung

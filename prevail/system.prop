@@ -41,13 +41,13 @@ ro.sf.lcd_density=160
 ro.opengles.version=131072
 
 # Network
-mobiledata.interfaces=pdp0,eth0,gprs,ppp0
+mobiledata.interfaces=rmnet0,eth0,gprs,ppp0
 ro.ril.hsxpa=2
 ro.ril.gprsclass=10
 
 # Key layouts
-hw.keyboards.0.devname=europa_keypad0
-hw.keyboards.65538.devname=europa_headset
+hw.keyboards.0.devname=vino_keypad0
+hw.keyboards.65538.devname=vino_headset
 android.keylayout.vino-keypad=/system/usr/keylayout/vino-keypad.kl
 android.keylayout.vino-headset=/system/usr/keylayout/vino-headset.kl
 android.keychar.vino-keypad=/system/usr/keychars/vino-keypad.kcm.bin
@@ -60,7 +60,9 @@ dalvik.vm.dexopt-flags=m=y
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.heapsize=64m
 persist.sys.purgeable_assets=1
+persist.sys.use_16bpp_alpha=1
 persist.sys.use_dithering=1
+ro.vold.umsdirtyratio=20
 
 # JNI debugging
 ro.kernel.android.checkjni=0
