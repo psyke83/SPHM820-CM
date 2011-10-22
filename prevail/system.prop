@@ -45,7 +45,7 @@ ro.opengles.version=131072
 
 # Network
 mobiledata.interfaces=rmnet0,eth0,gprs,ppp0
-ro.ril.hsxpa=2
+ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 
 # Key layouts
