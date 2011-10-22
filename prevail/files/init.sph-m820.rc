@@ -121,8 +121,15 @@ on boot
 	chmod 0777 /data/dump_enable
 
 # for multi csc
-	chown radio radio /proc/LinuStoreIII/efs_info 
-	chmod 0664 /proc/LinuStoreIII/efs_info
+    chown radio radio /proc/LinuStoreIII/efs_info 
+    chmod 0664 /proc/LinuStoreIII/efs_info
+    # for protecting key string
+    chown radio radio /proc/LinuStoreIII/keystr 
+    chmod 0664 /proc/LinuStoreIII/keystr
+
+# for ril_prop
+    chown radio radio /proc/LinuStoreIII/ril_prop 
+    chmod 0664 /proc/LinuStoreIII/ril_prop
 
 # for protecting key string
 	chown radio radio /proc/LinuStoreIII/keystr 
@@ -146,6 +153,18 @@ on boot
 	mkdir /data/misc/dhcp 0770 dhcp dhcp
 	mkdir /data/misc/dhcp 0777 system system
 	chmod 0666 /data/bdaddr
+
+# ppp modules
+ mknod 0666 /dev/ppp c 108 0
+
+#Define modem related settings
+    setprop ro.radio.use-ppp yes
+
+service pppd_cdma /system/bin/pppd_runner
+   user root
+   group radio cache inet misc system
+   disabled
+   oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
 	group wifi inet
