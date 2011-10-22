@@ -118,6 +118,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     device/samsung/prevail/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
+
+#APN
+PRODUCT_COPY_FILES += \
+    vendor/samsung/prevail/proprietary/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # SD Card
 PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/etc/vold.fstab:system/etc/vold.fstab
@@ -188,6 +193,8 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/lib/liblog.so:system/lib/liblog.so \
     vendor/samsung/prevail/proprietary/bin/logcat:system/bin/logcat \
     vendor/samsung/prevail/proprietary/bin/logwrapper:system/bin/logwrapper
+
+
 
 
 $(call inherit-product, build/target/product/full_base.mk)

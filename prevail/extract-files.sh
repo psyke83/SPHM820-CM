@@ -54,6 +54,8 @@ etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
 etc/wifi/wpa_supplicant.conf
 
+etc/apns-conf.xml
+
 etc/vold.fstab
 
 etc/AudioFilter.csv

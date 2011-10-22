@@ -28,7 +28,6 @@ done
 
 FILES="
 
-
 usr/keylayout/vino-headset.kl
 usr/keylayout/vino-keypad.kl
 usr/keylayout/qwerty.kl
@@ -55,6 +54,8 @@ etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
 etc/wifi/wpa_supplicant.conf
 
+etc/apns-conf.xml
+
 etc/vold.fstab
 
 etc/AudioFilter.csv
@@ -63,10 +64,12 @@ lib/libaudioeq.so
 etc/AutoVolumeControl.txt
 
 bin/rild
+bin/rilclient-test
 bin/qmuxd
 lib/libril.so
 lib/libsec-ril.so
 lib/libsecril-client.so
+lib/libreference-ril.so
 lib/libdiag.so
 
 bin/BCM4329B1_002.002.023.0746.0827.hcd
@@ -106,7 +109,10 @@ bin/logcat
 bin/logwrapper
 
 
+
+
 "
+
 
 for FILE in $FILES; do
 	cp /home/vaccar/ee14sys/$FILE ../../../vendor/samsung/prevail/proprietary/$FILE
