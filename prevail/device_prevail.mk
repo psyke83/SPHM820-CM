@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -135,10 +136,12 @@ PRODUCT_COPY_FILES += \
 # Samsung RIL
 PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/bin/rild:system/bin/rild \
+    vendor/samsung/prevail/proprietary/bin/rilclient-test:system/bin/rilclient-test \
     vendor/samsung/prevail/proprietary/bin/qmuxd:system/bin/qmuxd \
     vendor/samsung/prevail/proprietary/lib/libril.so:system/lib/libril.so \
     vendor/samsung/prevail/proprietary/lib/libsec-ril.so:system/lib/libsec-ril.so \
     vendor/samsung/prevail/proprietary/lib/libsecril-client.so:system/lib/libsecril-client.so \
+    vendor/samsung/prevail/proprietary/lib/libreference-ril.so:system/lib/libreference-ril.so \
     vendor/samsung/prevail/proprietary/lib/libdiag.so:system/lib/libdiag.so
 
 # Bluetooth

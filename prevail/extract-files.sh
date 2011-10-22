@@ -62,10 +62,12 @@ lib/libaudioeq.so
 etc/AutoVolumeControl.txt
 
 bin/rild
+bin/rilclient-test
 bin/qmuxd
 lib/libril.so
 lib/libsec-ril.so
 lib/libsecril-client.so
+lib/libreference-ril.so
 lib/libdiag.so
 
 bin/BCM4329B1_002.002.023.0746.0827.hcd
