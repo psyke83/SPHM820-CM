@@ -1136,7 +1136,7 @@ status_t AudioHardware::setVoiceVolume(float v)
         v = 1.0;
     }
 
-    int vol = lrint(v * 5.0);
+    int vol = lrint(v * 7.0);
     LOGD("setVoiceVolume(%f)\n", v);
     LOGI("Setting in-call volume to %d (available range is 0 to 7)\n", vol);
 
@@ -1154,7 +1154,7 @@ status_t AudioHardware::setVoiceVolume(float v)
 status_t AudioHardware::setMasterVolume(float v)
 {
     Mutex::Autolock lock(mLock);
-    int vol = ceil(v * 5.0);
+    int vol = ceil(v * 7.0);
     LOGI("Set master volume to %d.\n", vol);
     set_volume_rpc(SND_DEVICE_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_MEDIA_SPEAKER, SND_METHOD_VOICE, vol, m7xsnddriverfd);
@@ -1170,25 +1170,6 @@ status_t AudioHardware::setMasterVolume(float v)
     // return error - software mixer will handle it
     return -1;
 }
-
-#ifdef HAVE_FM_RADIO
-status_t AudioHardware::setFmVolume(float v)
-{
-    float ratio = 1.2;
-    int volume = (unsigned int)(AudioSystem::logToLinear(v) * ratio);
-
-    char volhex[10] = "";
-    sprintf(volhex, "0x%x ", volume);
-    char volreg[100] = "hcitool cmd 0x3f 0x15 0xf8 0x0 ";
-
-    strcat(volreg, volhex);
-    strcat(volreg, "0");
-
-    system(volreg);
-
-    return NO_ERROR;
-}
-#endif
 
 static status_t do_route_audio_rpc(uint32_t device,
                                    bool ear_mute, bool mic_mute, int m7xsnddriverfd)
