@@ -193,8 +193,18 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/bin/logcat:system/bin/logcat \
     vendor/samsung/prevail/proprietary/bin/logwrapper:system/bin/logwrapper
 
-
-
+# 3G PPP
+PRODUCT_COPY_FILES += \
+    vendor/samsung/prevail/proprietary/etc/init.cdma-pppd:system/etc/init.cdma-pppd \
+    vendor/samsung/prevail/proprietary/etc/init.gprs-pppd:system/etc/firmware/init.gprs-pppd \
+    vendor/samsung/prevail/proprietary/etc/ppp/chap-secrets:system/etc/ppp/chap-secrets \
+    vendor/samsung/prevail/proprietary/etc/ppp/ip-down:system/etc/ppp/ip-down \
+    vendor/samsung/prevail/proprietary/etc/ppp/ip-up:system/etc/ppp/ip-up \
+    vendor/samsung/prevail/proprietary/etc/ppp/ip-up-vpn:system/etc/ppp/ip-up-vpn \
+    vendor/samsung/prevail/proprietary/etc/ppp/options:system/etc/ppp/options \
+    vendor/samsung/prevail/proprietary/etc/ppp/pap-secrets:system/etc/ppp/pap-secrets \
+    vendor/samsung/prevail/proprietary/bin/pppd:system/bin/pppd \
+    vendor/samsung/prevail/proprietary/bin/pppd_runner:system/bin/pppd_runner
 
 $(call inherit-product, build/target/product/full_base.mk)
 

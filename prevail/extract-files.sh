@@ -16,6 +16,7 @@ etc/dhcpcd
 etc/dhcpcd/dhcpcd-hooks
 etc/firmware
 etc/permissions
+etc/pppp
 etc/wifi
 framework
 
@@ -108,8 +109,16 @@ lib/liblog.so
 bin/logcat
 bin/logwrapper
 
-
-
+etc/init.cdma-pppd
+etc/firmware/init.gprs-pppd
+etc/ppp/chap-secrets
+etc/ppp/ip-down
+etc/ppp/ip-up
+etc/ppp/ip-up-vpn
+etc/ppp/options
+etc/ppp/pap-secrets
+bin/pppd
+bin/pppd_runner
 
 "
 

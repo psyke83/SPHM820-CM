@@ -26,7 +26,22 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ro.cdma.home.operator.alpha=BoostMobile
 ro.cdma.home.operator.numeric=31000
-
+net.cdma.pppd.authtype=require-pap
+net.cdma.pppd.user=user[SPACE]SprintNextel
+net.cdma.datalinkinterface=/dev/ttyCDMA0
+net.interfaces.defaultroute=cdma
+net.cdma.ppp.interface=ppp0
+net.connectivity.type=CDMA1
+gsm.operator.alpha=Sprint
+gsm.operator.numeric=310120
+gsm.operator.iso-country=us
+gsm.operator.isroaming=false
+gsm.current.phone-type=2
+ro.csc.sales_code=SPR
+ril.sales_code=SPR
+ro.carrier=Sprint
+net.dns1=8.8.8.8
+net.dns2=8.8.4.4
 # WiFi
 wifi.interface=eth0
 wifi.supplicant_scan_interval=45

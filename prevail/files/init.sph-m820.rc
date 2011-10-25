@@ -9,6 +9,10 @@ on init
     insmod /lib/modules/jbd2.ko
     insmod /lib/modules/ext4.ko
 
+# ppp modules
+ mknod 0666 /dev/ppp c 108 0
+
+#__________________________________________________________________________________________________________________________-
 on fs
 
 # Mount partitions
@@ -16,7 +20,7 @@ on fs
 	mount ext4 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
 	mount ext4 /dev/block/stl14 /cache wait nosuid nodev noatime nodiratime noauto_da_alloc
 
-
+#__________________________________________________________________________________________________________________________-
 on boot
 
 
@@ -91,17 +95,35 @@ on boot
 	mkdir /data/radio 0770 radio radio
 	chown radio radio 0770 /data/radio
 
+#Permissions for qmuxd
+    chown radio radio /dev/smdcntl0
+    chown radio radio /dev/smdcntl1
+    chown radio radio /dev/smdcntl2
+
 # SD card polling
 	chown system system /sys/module/g_android/parameters/product_id
 	chown system system /sys/devices/platform/msm_sdcc.1/polling
 	chown system system /sys/devices/platform/msm_sdcc.2/polling
 	chown system system /sys/devices/platform/android_usb/composition
 
-# anr mode chage
-	mkdir /data/anr 0777 system system 
-	chmod 0777 /data/anr
+# create anr log 
+    mkdir /data/anr  0777 root root
+    chmod 0777 /data/anr
 
-# MAX8899 headset detect 
+# anr mode chage
+    mkdir /data/anr 0777 system system 
+    chmod 0777 /data/anr
+
+
+    chown system system /sys/module/g_android/parameters/product_id
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+    chown system system /sys/devices/platform/android_usb/composition
+    chown system system /sys/devices/platform/android_usb/remote_wakeup
+
+# MAX8899 headset detect
 	chown radio system /sys/class/switch/h2w/state
 
 # for silent reset
@@ -128,6 +150,15 @@ on boot
 	chmod 0777 /data/stream_headset.txt
 	chmod 0777 /data/stream_speaker.txt
 
+# for datarouter
+    chown system system /dev/dun
+    chown system system /dev/smd0
+    chown system system /sys/devices/platform/msm_hsusb/gadget/usb_state
+    write /sys/module/g_android/parameters/product_id 9017
+
+#Define modem related settings
+    setprop ro.radio.use-ppp yes
+
 
 # WIFI
 	mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -138,7 +169,34 @@ on boot
 	mkdir /data/misc/dhcp 0777 system system
 	chmod 0666 /data/bdaddr
 
+# Assign TCP buffer thresholds to be ceiling value of technology maximums
+# Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  262144
+    write /proc/sys/net/core/wmem_max  262144
 
+service pppd_cdma /system/bin/pppd_runner
+    user root
+    group radio cache inet misc system audio sdcard_rw net_admin net_raw
+    disabled
+    oneshot
+
+service stop_ppp_cdma stop ppp_cdma
+    user root
+    group radio cache inet misc system audio sdcard_rw net_admin net_raw
+    disabled
+    oneshot
+
+on property:ril.cdma.data_ready=true
+    start pppd_cdma
+
+on property:ril.cdma.data_ready=false
+    stop pppd_cdma    
+
+on property:dev.bootcomplete=1
+        stop stop_ppp_cdma
+
+on property:sys.bootcompleted=1
+        stop stop_ppp_cdma
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
 	group wifi inet
@@ -165,3 +223,8 @@ service memsicd /system/bin/memsicd
 	user system
 	group system
 	oneshot
+
+service qmuxd /system/bin/qmuxd
+    user radio
+    group system radio inet
+
