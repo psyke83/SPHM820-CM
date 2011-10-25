@@ -196,7 +196,7 @@ PRODUCT_COPY_FILES += \
 # 3G PPP
 PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/etc/init.cdma-pppd:system/etc/init.cdma-pppd \
-    vendor/samsung/prevail/proprietary/etc/init.gprs-pppd:system/etc/firmware/init.gprs-pppd \
+    vendor/samsung/prevail/proprietary/etc/init.gprs-pppd:system/etc/init.gprs-pppd \
     vendor/samsung/prevail/proprietary/etc/ppp/chap-secrets:system/etc/ppp/chap-secrets \
     vendor/samsung/prevail/proprietary/etc/ppp/ip-down:system/etc/ppp/ip-down \
     vendor/samsung/prevail/proprietary/etc/ppp/ip-up:system/etc/ppp/ip-up \

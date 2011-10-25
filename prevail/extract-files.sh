@@ -16,7 +16,7 @@ etc/dhcpcd
 etc/dhcpcd/dhcpcd-hooks
 etc/firmware
 etc/permissions
-etc/pppp
+etc/ppp
 etc/wifi
 framework
 
@@ -110,7 +110,7 @@ bin/logcat
 bin/logwrapper
 
 etc/init.cdma-pppd
-etc/firmware/init.gprs-pppd
+etc/init.gprs-pppd
 etc/ppp/chap-secrets
 etc/ppp/ip-down
 etc/ppp/ip-up
