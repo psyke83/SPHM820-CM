@@ -50,9 +50,16 @@ lib/libmmipl.so
 lib/libmmjpeg.so
 
 etc/dhcpcd/dhcpcd.conf
+etc/wifi/bcm4329_sta.bin
+etc/wifi/bcm4329_mfg.bin
+etc/wifi/bcm4329_aps.bin
 etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
-etc/wifi/wpa_supplicant.conf
+etc/wifi/wifi.conf
+bin/mfgloader
+bin/wlservice
+lib/libwlservice.so
+lib/libwlandut.so
 
 etc/apns-conf.xml
 
@@ -118,6 +125,13 @@ etc/ppp/options
 etc/ppp/pap-secrets
 bin/pppd
 bin/pppd_runner
+
+lib/libloc_api.so
+lib/libsecgps.so
+lib/librpc.so
+lib/liboncrpc.so
+lib/libcommondefs.so
+etc/gps.conf
 
 "
 

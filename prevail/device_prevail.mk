@@ -111,12 +111,18 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_COPY_FILES += \
     device/samsung/prevail/files/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
+    device/samsung/prevail/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     vendor/samsung/prevail/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_sta.bin:system/etc/wifi/bcm4329_sta.bin \
+    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_mfg.bin:system/etc/wifi/bcm4329_mfg.bin \
+    vendor/samsung/prevail/proprietary/etc/wifi/bcm4329_aps.bin:system/etc/wifi/bcm4329_aps.bin \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
     vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
-    vendor/samsung/prevail/proprietary/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
-    device/samsung/prevail/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
+    vendor/samsung/prevail/proprietary/etc/wifi/wifi.conf:system/etc/wifi/wifi.conf \
+    vendor/samsung/prevail/proprietary/bin/mfgloader:system/bin/mfgloader \
+    vendor/samsung/prevail/proprietary/bin/wlservice:system/bin/wlservice \
+    vendor/samsung/prevail/proprietary/lib/libwlservice.so:system/lib/libwlservice.so \
+    vendor/samsung/prevail/proprietary/lib/libwlandut.so:system/lib/libwlandut.so
 
 #APN
 PRODUCT_COPY_FILES += \
@@ -205,6 +211,15 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/etc/ppp/pap-secrets:system/etc/ppp/pap-secrets \
     vendor/samsung/prevail/proprietary/bin/pppd:system/bin/pppd \
     vendor/samsung/prevail/proprietary/bin/pppd_runner:system/bin/pppd_runner
+
+# GPS
+PRODUCT_COPY_FILES += \
+    vendor/samsung/prevail/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
+    vendor/samsung/prevail/proprietary/lib/libsecgps.so:system/lib/libsecgps.so \
+    vendor/samsung/prevail/proprietary/lib/librpc.so:system/lib/librpc.so \
+    vendor/samsung/prevail/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
+    vendor/samsung/prevail/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
+    vendor/samsung/prevail/proprietary/etc/gps.conf:system/etc/gps.conf
 
 $(call inherit-product, build/target/product/full_base.mk)
 

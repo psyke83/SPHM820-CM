@@ -81,10 +81,13 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 
 # GPS
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
-BOARD_USES_QCOM_GPS := true
+BOARD_GPS_LIBRARIES := libloc_api
 BOARD_USES_QCOM_LIBRPC := true
+BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := prevail
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
+#BOARD_USES_GPSSHIM := true
+BOARD_GPS_NEEDS_XTRA := true
 
 # USB
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/samsung/prevail/UsbController.cpp
@@ -93,14 +96,18 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun"
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
 # WiFi
-BOARD_WLAN_DEVICE := bcm4329
+BOARD_WLAN_DEVICE := dhd
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION := VER_0_6_X
 WIFI_DRIVER_MODULE_NAME := "dhd"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/vendor/firmware/nvram_net.txt"
+WIFI_DRIVER_APS_FIRMWARE_NAME := "bcm4329_aps.bin"
+WIFI_DRIVER_STA_FIRMWARE_NAME := "bcm4329_sta.bin"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wifi/bcm4329_sta.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wifi/bcm4329_aps.bin"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
+WIFI_MFGDRV_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_mfg.bin nvram_path=/system/etc/wifi/nvram_mfg.txt"
+WIFI_DRV_AP_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4329_aps.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 BOARD_WEXT_NO_COMBO_SCAN    := true
 
 # 3G

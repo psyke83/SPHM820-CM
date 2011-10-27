@@ -9,18 +9,104 @@ on init
     insmod /lib/modules/jbd2.ko
     insmod /lib/modules/ext4.ko
 
-# ppp modules
- mknod 0666 /dev/ppp c 108 0
+# Samsung Paramter driver
+    insmod /lib/modules/sec_param.ko
 
-#__________________________________________________________________________________________________________________________-
-on fs
+
+    chmod 0770 /dev/stl9
+    chmod 0770 /dev/stl10
+    chmod 0770 /dev/stl11
+    chmod 0770 /dev/stl12
+    chmod 0770 /dev/stl13
+    chmod 0770 /dev/stl14
+    chmod 0770 /dev/stl15
+
+    chmod 0770 /dev/bml7
+    chmod 0770 /dev/bml9
+    chmod 0770 /dev/bml10
+    chmod 0770 /dev/bml11
+    chmod 0770 /dev/bml12
+    chmod 0770 /dev/bml13
+    chmod 0770 /dev/bml14
+    chmod 0770 /dev/bml15
+
 
 # Mount partitions
 	mount ext4 /dev/block/stl12 /system wait noatime nodiratime noauto_da_alloc ro
 	mount ext4 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
 	mount ext4 /dev/block/stl14 /cache wait nosuid nodev noatime nodiratime noauto_da_alloc
 
-#__________________________________________________________________________________________________________________________-
+# Backwards Compat - XXX: Going away in G*
+    symlink /mnt/sdcard /sdcard
+    mkdir /cache 0770 system cache
+    mkdir /config 0500 root root
+
+# Directory for putting things only root should see.
+    mkdir /mnt/secure 0700 root root
+
+# Collect ramconsole data
+    copy /proc/last_kmsg /data/dontpanic/last_kmsg
+    chown root log /data/dontpanic/last_kmsg
+    chmod 0640 /data/dontpanic/last_kmsg
+
+    chmod 0660 /dev/graphics/fb0
+
+
+# create log system
+    mkdir /data/log  0777 root root
+    chmod 0777 /data/log
+
+# create anr log 
+    mkdir /data/anr  0777 root root
+    chmod 0777 /data/anr
+
+# anr mode chage
+    mkdir /data/anr 0777 system system 
+    chmod 0777 /data/anr
+
+
+# create fumo
+    mkdir /cache/fumo 0770
+    chown system system /cache/fumo
+    chmod 0770 /cache/fumo
+
+# change the permissionsensor chips
+	chmod 0660 /dev/proximity
+	chmod 0660 /dev/mmc31xx
+	chmod 0660 /dev/bma_accel
+	chmod 0660 /dev/kr3dm_accel
+	chmod 0666 /data/misc/sensors/ecs_nvm
+	chmod 0666 /data/misc/sensors/accel_offset
+	chmod 0660 /dev/ecompass_ctrl
+	chown system system /dev/mmc31xx	
+	chown system system /dev/kr3dm_accel	
+	chown system system /dev/ecompass_ctrl	
+	chown system system /dev/proximity
+
+# give read permission for others
+# this allows dumpsate to execute procrank
+# remove this for final build!
+	chmod 0444 /proc/kpagecount
+	chmod 0444 /proc/kpageflags	
+
+# ppp modules
+ mknod 0666 /dev/ppp c 108 0
+
+# for Gps Clp certificates
+
+    mkdir /data/clp
+    chmod 0777 /data/clp
+
+    mount rootfs rootfs / ro remount
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+    write /proc/cpu/alignment 4
+    write /proc/sys/kernel/sched_latency_ns 10000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+    write /proc/sys/kernel/sched_compat_yield 1
+    write /proc/sys/kernel/sched_child_runs_first 0
+#_______________________________________________________________________________________________________________________-
 on boot
 
 
@@ -39,6 +125,12 @@ on boot
 	mkdir /data/misc/sensors 0777 system misc
 	chmod 0666 /data/misc/sensors/ecs_nvm
 	chmod 0666 /data/misc/sensors/accel_offset
+
+
+#Permissions for qmuxd
+    chown radio radio /dev/smdcntl0
+    chown radio radio /dev/smdcntl1
+    chown radio radio /dev/smdcntl2
 
 # Setup bluetooth
 	mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
@@ -63,25 +155,6 @@ on boot
 	chown dhcp dhcp /data/misc/dhcp
 	mkdir /data/system 0775 system system
 
-# change the permissionsensor chips
-	chmod 0660 /dev/proximity
-	chmod 0660 /dev/mmc31xx
-	chmod 0660 /dev/bma_accel
-	chmod 0660 /dev/kr3dm_accel
-	chmod 0666 /data/misc/sensors/ecs_nvm
-	chmod 0666 /data/misc/sensors/accel_offset
-	chmod 0660 /dev/ecompass_ctrl
-	chown system system /dev/mmc31xx	
-	chown system system /dev/kr3dm_accel	
-	chown system system /dev/ecompass_ctrl	
-	chown system system /dev/proximity	
-
-# give read permission for others
-# this allows dumpsate to execute procrank
-# remove this for final build!
-	chmod 0444 /proc/kpagecount
-	chmod 0444 /proc/kpageflags
-
 # Permission for ril
 	mkdir /data/misc/radio 0774 radio radio
 	mkdir /data/local
@@ -95,33 +168,18 @@ on boot
 	mkdir /data/radio 0770 radio radio
 	chown radio radio 0770 /data/radio
 
-#Permissions for qmuxd
-    chown radio radio /dev/smdcntl0
-    chown radio radio /dev/smdcntl1
-    chown radio radio /dev/smdcntl2
-
 # SD card polling
 	chown system system /sys/module/g_android/parameters/product_id
 	chown system system /sys/devices/platform/msm_sdcc.1/polling
 	chown system system /sys/devices/platform/msm_sdcc.2/polling
 	chown system system /sys/devices/platform/android_usb/composition
-
-# create anr log 
-    mkdir /data/anr  0777 root root
-    chmod 0777 /data/anr
-
-# anr mode chage
-    mkdir /data/anr 0777 system system 
-    chmod 0777 /data/anr
-
-
-    chown system system /sys/module/g_android/parameters/product_id
-    chown system system /sys/devices/platform/msm_sdcc.1/polling
-    chown system system /sys/devices/platform/msm_sdcc.2/polling
-    chown system system /sys/devices/platform/msm_sdcc.3/polling
-    chown system system /sys/devices/platform/msm_sdcc.4/polling
-    chown system system /sys/devices/platform/android_usb/composition
-    chown system system /sys/devices/platform/android_usb/remote_wakeup
+        chown system system /sys/module/g_android/parameters/product_id
+        chown system system /sys/devices/platform/msm_sdcc.1/polling
+        chown system system /sys/devices/platform/msm_sdcc.2/polling
+        chown system system /sys/devices/platform/msm_sdcc.3/polling
+        chown system system /sys/devices/platform/msm_sdcc.4/polling
+        chown system system /sys/devices/platform/android_usb/composition
+        chown system system /sys/devices/platform/android_usb/remote_wakeup
 
 # MAX8899 headset detect
 	chown radio system /sys/class/switch/h2w/state
@@ -129,6 +187,10 @@ on boot
 # for silent reset
 	chown system system /proc/dump_enable
 	chown system system /proc/silent
+
+# Force Power Down
+	chmod 0660 /sys/class/sec/pm/power_down
+	chown root system /sys/class/sec/pm/power_down
 
 # for Dump On/Off
 	chmod 0777 /data/dump_enable
@@ -150,15 +212,23 @@ on boot
 	chmod 0777 /data/stream_headset.txt
 	chmod 0777 /data/stream_speaker.txt
 
+#Touch multi-touch permissions
+    chmod 0666 /sys/class/sec/ts/firmware1
+
 # for datarouter
     chown system system /dev/dun
     chown system system /dev/smd0
     chown system system /sys/devices/platform/msm_hsusb/gadget/usb_state
-    write /sys/module/g_android/parameters/product_id 9017
+
+    class_start default
 
 #Define modem related settings
     setprop ro.radio.use-ppp yes
 
+#SecFeature.SprintHotspot start
+    chown system system /system/bin/softap_event
+    chmod 4775 /system/bin/softap_event
+##SecFeature.SprintHotspot end
 
 # WIFI
 	mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -174,15 +244,12 @@ on boot
     write /proc/sys/net/core/rmem_max  262144
     write /proc/sys/net/core/wmem_max  262144
 
+## Daemon processes to be run by init.
+##
+
 service pppd_cdma /system/bin/pppd_runner
     user root
-    group radio cache inet misc system audio sdcard_rw net_admin net_raw
-    disabled
-    oneshot
-
-service stop_ppp_cdma stop ppp_cdma
-    user root
-    group radio cache inet misc system audio sdcard_rw net_admin net_raw
+    group radio cache inet misc system audio sdcard_rw net_admin net_raw log
     disabled
     oneshot
 
@@ -191,12 +258,6 @@ on property:ril.cdma.data_ready=true
 
 on property:ril.cdma.data_ready=false
     stop pppd_cdma    
-
-on property:dev.bootcomplete=1
-        stop stop_ppp_cdma
-
-on property:sys.bootcompleted=1
-        stop stop_ppp_cdma
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
 	group wifi inet
