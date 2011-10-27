@@ -73,9 +73,6 @@ etc/AutoVolumeControl.txt
 bin/rild
 bin/rilclient-test
 bin/qmuxd
-lib/libril.so
-lib/libsec-ril.so
-lib/libsecril-client.so
 lib/libreference-ril.so
 lib/libdiag.so
 
@@ -127,7 +124,6 @@ bin/pppd
 bin/pppd_runner
 
 lib/libloc_api.so
-lib/libsecgps.so
 lib/librpc.so
 lib/liboncrpc.so
 lib/libcommondefs.so
