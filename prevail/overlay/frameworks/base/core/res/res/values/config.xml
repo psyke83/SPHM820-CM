@@ -46,6 +46,7 @@
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"ppp\\d"</item>
         <item>"eth\\d"</item>
+        <item>"rmnet\\d"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable

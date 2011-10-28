@@ -151,6 +151,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/bin/rild:system/bin/rild \
     vendor/samsung/prevail/proprietary/bin/rilclient-test:system/bin/rilclient-test \
     vendor/samsung/prevail/proprietary/bin/qmuxd:system/bin/qmuxd \
+    vendor/samsung/prevail/proprietary/lib/libril.so:system/lib/libril.so \
+    vendor/samsung/prevail/proprietary/lib/libsec-ril.so:system/lib/libsec-ril.so \
+    vendor/samsung/prevail/proprietary/lib/libsecril-client.so:system/lib/libsecril-client.so \
     vendor/samsung/prevail/proprietary/lib/libreference-ril.so:system/lib/libreference-ril.so \
     vendor/samsung/prevail/proprietary/lib/libdiag.so:system/lib/libdiag.so
 
@@ -215,6 +218,7 @@ PRODUCT_COPY_FILES += \
 # GPS
 PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
+    vendor/samsung/prevail/proprietary/lib/libsecgps.so:system/lib/libsecgps.so \
     vendor/samsung/prevail/proprietary/lib/librpc.so:system/lib/librpc.so \
     vendor/samsung/prevail/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
     vendor/samsung/prevail/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
