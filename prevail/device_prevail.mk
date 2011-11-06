@@ -204,11 +204,9 @@ PRODUCT_COPY_FILES += \
 
 # 3G PPP
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/etc/init.cdma-pppd:system/etc/init.cdma-pppd \
-    vendor/samsung/prevail/proprietary/etc/init.gprs-pppd:system/etc/init.gprs-pppd \
     vendor/samsung/prevail/proprietary/etc/ppp/chap-secrets:system/etc/ppp/chap-secrets \
     vendor/samsung/prevail/proprietary/etc/ppp/ip-down:system/etc/ppp/ip-down \
-    vendor/samsung/prevail/proprietary/etc/ppp/ip-up:system/etc/ppp/ip-up \
+    device/samsung/prevail/files/etc/ppp/ip-up:system/etc/ppp/ip-up \
     vendor/samsung/prevail/proprietary/etc/ppp/ip-up-vpn:system/etc/ppp/ip-up-vpn \
     vendor/samsung/prevail/proprietary/etc/ppp/options:system/etc/ppp/options \
     vendor/samsung/prevail/proprietary/etc/ppp/pap-secrets:system/etc/ppp/pap-secrets \
@@ -222,7 +220,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/prevail/proprietary/lib/librpc.so:system/lib/librpc.so \
     vendor/samsung/prevail/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
     vendor/samsung/prevail/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
-    vendor/samsung/prevail/proprietary/etc/gps.conf:system/etc/gps.conf
+    device/samsung/prevail/files/etc/gps.conf:system/etc/gps.conf
 
 $(call inherit-product, build/target/product/full_base.mk)
 
@@ -230,11 +228,11 @@ $(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product, vendor/cyanogen/products/common_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 
 # Broadcom FM radio
-$(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)
+#$(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/prevail/prevail-vendor.mk)
 

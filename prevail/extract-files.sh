@@ -120,7 +120,6 @@ etc/init.cdma-pppd
 etc/init.gprs-pppd
 etc/ppp/chap-secrets
 etc/ppp/ip-down
-etc/ppp/ip-up
 etc/ppp/ip-up-vpn
 etc/ppp/options
 etc/ppp/pap-secrets
@@ -132,7 +131,6 @@ lib/libsecgps.so
 lib/librpc.so
 lib/liboncrpc.so
 lib/libcommondefs.so
-etc/gps.conf
 
 "
 
