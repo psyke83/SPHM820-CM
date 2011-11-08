@@ -204,13 +204,6 @@ PRODUCT_COPY_FILES += \
 
 # 3G PPP
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/etc/ppp/chap-secrets:system/etc/ppp/chap-secrets \
-    vendor/samsung/prevail/proprietary/etc/ppp/ip-down:system/etc/ppp/ip-down \
-    device/samsung/prevail/files/etc/ppp/ip-up:system/etc/ppp/ip-up \
-    vendor/samsung/prevail/proprietary/etc/ppp/ip-up-vpn:system/etc/ppp/ip-up-vpn \
-    vendor/samsung/prevail/proprietary/etc/ppp/options:system/etc/ppp/options \
-    vendor/samsung/prevail/proprietary/etc/ppp/pap-secrets:system/etc/ppp/pap-secrets \
-    vendor/samsung/prevail/proprietary/bin/pppd:system/bin/pppd \
     vendor/samsung/prevail/proprietary/bin/pppd_runner:system/bin/pppd_runner
 
 # GPS
