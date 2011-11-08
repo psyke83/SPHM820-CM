@@ -204,7 +204,7 @@ PRODUCT_COPY_FILES += \
 
 # 3G PPP
 PRODUCT_COPY_FILES += \
-    vendor/samsung/prevail/proprietary/bin/pppd_runner:system/bin/pppd_runner
+    device/samsung/prevail/files/bin/pppd_runner:system/bin/pppd_runner
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -230,6 +230,25 @@ $(call inherit-product, vendor/cyanogen/products/common_full.mk)
 $(call inherit-product-if-exists, vendor/samsung/prevail/prevail-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/prevail/overlay
+
+# for cdma (Vzw values; works with Sprint also)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=4 \
+    ro.ril.def.agps.mode=2 \
+    ro.ril.samsung_cdma=true \
+    ro.cdma.home.operator.numeric=310004 \
+    ro.cdma.home.operator.alpha=Verizon \
+    ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
+    ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
+    ro.config.vc_call_vol_steps=15 \
+    ro.cdma.otaspnumschema=SELC,3,00,07,80,87,88,99 \
+    net.cdma.pppd.authtype=require-chap \
+    net.cdma.pppd.user=user[SPACE]VerizonWireless \
+    net.cdma.datalinkinterface=/dev/ttyCDMA0 \
+    net.cdma.ppp.interface=ppp0 \
+    net.connectivity.type=CDMA1 \
+    net.interfaces.defaultroute=cdma \
+    ro.telephony.ril_class=samsung
 
 # LDPI assets
 PRODUCT_LOCALES += ldpi mdpi
